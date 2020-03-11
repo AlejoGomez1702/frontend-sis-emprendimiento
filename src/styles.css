@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ng-snotify/styles/material.css"; 
+
+/* Estilos para lis listados de recursos */
+@import "./assets/css/add-form-styles.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

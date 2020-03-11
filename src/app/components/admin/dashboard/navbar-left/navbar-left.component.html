@@ -1,0 +1,146 @@
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a routerLink="/dashboard" title="Ir a Dashboard" class="brand-link">
+        <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
+        <span class="brand-text font-weight-light title-system">UAM</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="assets/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a routerLink="#" class="d-block">{{username}}</a>
+        </div>
+      </div>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="true">
+          
+          <!-- Boton para ir al dashboard principal -->
+          <li class="nav-item has-treeview">
+            <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  class="nav-link">
+              <i class="nav-icon fa fa-tachometer"></i>
+              <p>
+                Dashboard
+                <!-- <i class="right fa fa-angle-left"></i> -->
+              </p>
+            </a>
+          </li>
+
+          <!-- Rutas menu de despliegue -->
+          <li class="nav-item has-treeview" (click)="addClass()">
+            <a href="#" class="nav-link" >
+              <i class="nav-icon fa fa-map-marker"></i>
+              <p>
+                Rutas
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <!-- READ -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/routes" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+                  <i class="fa fa-eye nav-icon"></i>
+                  <p>Ver Rutas</p>
+                </a>
+              </li>
+              <!-- CREATE -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/routes/new" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Agregar Ruta</p>
+                </a>
+              </li>              
+            </ul>
+          </li>
+
+          <!-- Menú de vehiculos  -->
+          <li class="nav-item has-treeview" (click)="addClass()">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-motorcycle"></i>
+              <p>
+                Vehículos
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <!-- READ -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/vehicles" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
+                  <i class="fa fa-eye nav-icon"></i>
+                  <p>Ver Vehículos</p>
+                </a>
+              </li>
+              <!-- CREATE -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/vehicles/new" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Agregar Vehículo</p>
+                </a>
+              </li>              
+            </ul>
+          </li>
+
+          <!-- Menú de clientes -->
+          <li class="nav-item has-treeview" (click)="addClass()">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Clientes
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <!-- READ -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/clients" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                  <i class="fa fa-eye nav-icon"></i>
+                  <p>Ver Clientes</p>
+                </a>
+              </li>
+              <!-- CREATE -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/clients/new" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Agregar Cliente</p>
+                </a>
+              </li>              
+            </ul>
+          </li>
+
+          <!-- Menú de cobradores -->
+          <li class="nav-item has-treeview" (click)="addClass()">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-address-book-o"></i>
+              <p>
+                Cobradores
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <!-- READ -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/employees" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                  <i class="fa fa-eye nav-icon"></i>
+                  <p>Ver Cobradores</p>
+                </a>
+              </li>
+              <!-- CREATE -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/employees/new" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+                  <i class="fa fa-plus-circle nav-icon"></i>
+                  <p>Agregar Cobrador</p>
+                </a>
+              </li> 
+            </ul>
+          </li>
+        </ul>
+      </nav>
+  </div>
+</aside>
