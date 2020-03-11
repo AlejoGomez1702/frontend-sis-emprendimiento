@@ -38,7 +38,7 @@
             <a href="#" class="nav-link" >
               <i class="nav-icon fa fa-map-marker"></i>
               <p>
-                Rutas
+                CRUD
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -47,97 +47,16 @@
               <li class="nav-item">
                 <a routerLink="/dashboard/routes" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
                   <i class="fa fa-eye nav-icon"></i>
-                  <p>Ver Rutas</p>
+                  <p>Ver Recursos</p>
                 </a>
               </li>
               <!-- CREATE -->
               <li class="nav-item">
                 <a routerLink="/dashboard/routes/new" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" class="nav-link">
                   <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Agregar Ruta</p>
+                  <p>Agregar Recurso</p>
                 </a>
               </li>              
-            </ul>
-          </li>
-
-          <!-- Menú de vehiculos  -->
-          <li class="nav-item has-treeview" (click)="addClass()">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-motorcycle"></i>
-              <p>
-                Vehículos
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <!-- READ -->
-              <li class="nav-item">
-                <a routerLink="/dashboard/vehicles" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
-                  <i class="fa fa-eye nav-icon"></i>
-                  <p>Ver Vehículos</p>
-                </a>
-              </li>
-              <!-- CREATE -->
-              <li class="nav-item">
-                <a routerLink="/dashboard/vehicles/new" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link">
-                  <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Agregar Vehículo</p>
-                </a>
-              </li>              
-            </ul>
-          </li>
-
-          <!-- Menú de clientes -->
-          <li class="nav-item has-treeview" (click)="addClass()">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-                Clientes
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <!-- READ -->
-              <li class="nav-item">
-                <a routerLink="/dashboard/clients" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                  <i class="fa fa-eye nav-icon"></i>
-                  <p>Ver Clientes</p>
-                </a>
-              </li>
-              <!-- CREATE -->
-              <li class="nav-item">
-                <a routerLink="/dashboard/clients/new" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
-                  <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Agregar Cliente</p>
-                </a>
-              </li>              
-            </ul>
-          </li>
-
-          <!-- Menú de cobradores -->
-          <li class="nav-item has-treeview" (click)="addClass()">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-address-book-o"></i>
-              <p>
-                Cobradores
-                <i class="right fa fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <!-- READ -->
-              <li class="nav-item">
-                <a routerLink="/dashboard/employees" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-                  <i class="fa fa-eye nav-icon"></i>
-                  <p>Ver Cobradores</p>
-                </a>
-              </li>
-              <!-- CREATE -->
-              <li class="nav-item">
-                <a routerLink="/dashboard/employees/new" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
-                  <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Agregar Cobrador</p>
-                </a>
-              </li> 
             </ul>
           </li>
         </ul>
