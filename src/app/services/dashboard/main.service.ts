@@ -28,7 +28,7 @@ export class MainService
    */
   getUser(): Observable<User>
   {    
-    return this.http.post<User>(this.API_URI + "me", this.header);
+    return this.http.get<User>(this.API_URI + "me", this.header);
   }
 
   /**
