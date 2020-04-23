@@ -43,7 +43,7 @@ export class TokenService {
     return false;
   }
 
-  logout(){
-    localStorage.removeItem('token')
-  }
+  // logout(){
+  //   localStorage.removeItem('token')
+  // }
 }

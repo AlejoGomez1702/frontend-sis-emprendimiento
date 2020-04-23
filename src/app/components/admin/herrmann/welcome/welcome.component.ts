@@ -20,7 +20,8 @@ export class WelcomeComponent implements OnInit
 
   initTest()
   {
-    this.spinner.show();
+    //this.spinner.show();
+    console.log('Llamando a la funcion inittest');
 
     this.herrmannService.createHerrmann().subscribe(
       res => this.handleResponse(res),
@@ -31,15 +32,15 @@ export class WelcomeComponent implements OnInit
   handleResponse(res)
   {
     console.log(res);
-    this.spinner.hide();    
+    //this.spinner.hide();    
     //console.log(res.user.role.name == 'admin');
     
   }
 
   handleError(err)
   {
-    console.log(err);
-    this.spinner.hide();
+    console.log(err.error);
+    //this.spinner.hide();
   }
 
 

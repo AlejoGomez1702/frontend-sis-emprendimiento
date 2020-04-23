@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,9 @@ export class HerrmannService
 
   createHerrmann()
   {
-    return this.http.post(this.API_URL + 'create/herrmann', localStorage.getItem('token'),{
+    let headers =  new HttpHeaders().set('Authorization', localStorage.getItem('token'));
+
+    return this.http.post(this.API_URL + 'create/herrmann', {
       headers:{
         'Authorization': localStorage.getItem('token')
       }

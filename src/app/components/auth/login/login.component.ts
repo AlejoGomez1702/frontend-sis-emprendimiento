@@ -72,8 +72,8 @@ export class LoginComponent implements OnInit
     this.spinner.hide();
     //console.log(res.user.role.name == 'admin');
     
-    this.token.createToken(res.acces_token);
-    if(res.user){
+    this.token.createToken(res);
+    if(res){
       this.router.navigateByUrl('/dashboard');
     }
   }
