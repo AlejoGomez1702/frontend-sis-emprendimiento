@@ -10,6 +10,8 @@ import { MaterialModule } from '../material.module';
  
 import { FooterListsComponent } from '../common/footer-lists/footer-lists.component';
 import { MainSectionComponent } from './dashboard/main-section/main-section.component';
+import { WelcomeComponent } from './herrmann/welcome/welcome.component';
+import { NewComponent } from './herrmann/new/new.component';
 
 @NgModule({
   
@@ -18,7 +20,8 @@ import { MainSectionComponent } from './dashboard/main-section/main-section.comp
     NavbarLeftComponent,
     NavbarTopComponent,
     FooterListsComponent, 
-    MainSectionComponent 
+    MainSectionComponent, 
+    WelcomeComponent, NewComponent 
   ],  
   imports: [
     CommonModule,

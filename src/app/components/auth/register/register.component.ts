@@ -9,13 +9,15 @@ declare var $:any;
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit 
+{
+  public password_confirmation: null;
+
   public form = {
     name:null,
-    lastname:null,
+    surname:null,
     email:null,
-    password:null,
-    password_confirmation:null
+    password:null
   }
 
   public error = {
@@ -42,14 +44,22 @@ export class RegisterComponent implements OnInit {
 
   register()
   {
-    this.spinner.show()
-    this.service.signup(this.form).subscribe(
-      res=>this.handleResponse(res),
-      error=>this.handleError(error)
-    )
+    this.spinner.show();
+    if(this.password_confirmation == this.form.password)
+    {
+      this.service.signup(this.form).subscribe(
+        res=>this.handleResponse(res),
+        error=>this.handleError(error)
+      );
+    }
+    else
+    {
+      console.log("jajajajjajajajajaj");
+    }
   }
 
   handleResponse(data){
+    console.log(data);
     this.spinner.hide()
     this.token.createToken(data.access_token);
     this.router.navigateByUrl('/dashboard');

@@ -10,7 +10,8 @@ export class AuthService
   // public API_URI = "http://aqueous-ridge-01368.herokuapp.com/api";
   public API_URI = "http://localhost:8000/api"
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) 
+  { }
 
   login(form)
   {
@@ -18,7 +19,8 @@ export class AuthService
   }
 
   signup(form){
-    return this.http.post(this.API_URI+"/signup",form);
+    console.log(form);
+    return this.http.post(this.API_URI+"/register",form);
   }
 
   resetPassword(form){

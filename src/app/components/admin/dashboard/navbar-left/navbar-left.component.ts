@@ -29,12 +29,12 @@ export class NavbarLeftComponent implements OnInit
   ) 
   { 
     this.title.setTitle('Dashboard');   
-    this.getUser();
+    //  this.getUser();
   }
 
   ngOnInit() {
     // this.title.setTitle('Dashboard');   
-    // this.getUser();
+    this.getUser();
     //this.username = this.user.name + " " + this.user.lastname; 
     //console.log(this.user);
   }
@@ -52,6 +52,7 @@ export class NavbarLeftComponent implements OnInit
   {
     this.user = data.user;
     this.username = this.user.name + " " + this.user.lastname; 
+    console.log(data);
   }
 
   handleError(error){

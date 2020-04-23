@@ -1,0 +1,277 @@
+<div class="center-text">
+    <h1>Sección #1</h1>
+    <h4 class="paint-text">Seleccione 8 características con las que mas se identifique:</h4>
+</div>
+<!-- general form elements disabled -->
+<div class="card card-secondary spacing">
+    <!-- <div class="card-header">
+      <h3 class="card-title">Custom Elements</h3>
+    </div> -->
+    <!-- /.card-header -->
+    <div class="card-body size-body">
+      <!-- <form role="form"> -->
+        <!-- Sección AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1a" [disabled]="!seccionArr[0][0] && total >= 8">
+                <label class="custom-control-label" for="customSwitch1a">Traductor</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2a" [disabled]="!seccionArr[0][1] && total >= 8">
+                <label class="custom-control-label" for="customSwitch2a">Crítico</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3a" [disabled]="!seccionArr[0][2] && total >= 8">
+                <label class="custom-control-label" for="customSwitch3a">Diagnosticador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4a" [disabled]="!seccionArr[0][3] && total >= 8">
+                <label class="custom-control-label" for="customSwitch4a">Estadístico</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5a" [disabled]="!seccionArr[0][4] && total >= 8">
+                <label class="custom-control-label" for="customSwitch5a">Matemático</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6a" [disabled]="!seccionArr[0][5] && total >= 8">
+                <label class="custom-control-label" for="customSwitch6a">Resolutor Lógico</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7a" [disabled]="!seccionArr[0][6] && total >= 8">
+                <label class="custom-control-label" for="customSwitch7a">Articulador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8a" [disabled]="!seccionArr[0][7] && total >= 8">
+                <label class="custom-control-label" for="customSwitch8a">Analítico</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9a" [disabled]="!seccionArr[0][8] && total >= 8">
+                <label class="custom-control-label" for="customSwitch9a">Descubre Problemas</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10a" [disabled]="!seccionArr[0][9] && total >= 8">
+                <label class="custom-control-label" for="customSwitch10a">Calculador</label>
+            </div>
+        </div>
+
+        <!-- Sección BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1b" [disabled]="!seccionArr[1][0] && total >= 8">
+                <label class="custom-control-label" for="customSwitch1b">Secuencial</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2b" [disabled]="!seccionArr[1][1] && total >= 8">
+                <label class="custom-control-label" for="customSwitch2b">Programador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3b" [disabled]="!seccionArr[1][2] && total >= 8">
+                <label class="custom-control-label" for="customSwitch3b">Rutinario</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4b" [disabled]="!seccionArr[1][3] && total >= 8">
+                <label class="custom-control-label" for="customSwitch4b">Planificador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5b" [disabled]="!seccionArr[1][4] && total >= 8">
+                <label class="custom-control-label" for="customSwitch5b">Implementador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6b" [disabled]="!seccionArr[1][5] && total >= 8">
+                <label class="custom-control-label" for="customSwitch6b">Organizador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7b" [disabled]="!seccionArr[1][6] && total >= 8">
+                <label class="custom-control-label" for="customSwitch7b">Puntual</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8b" [disabled]="!seccionArr[1][7] && total >= 8">
+                <label class="custom-control-label" for="customSwitch8b">Detallado</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9b" [disabled]="!seccionArr[1][8] && total >= 8">
+                <label class="custom-control-label" for="customSwitch9b">Gusta la seguridad</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10b" [disabled]="!seccionArr[1][9] && total >= 8">
+                <label class="custom-control-label" for="customSwitch10b">Normativo</label>
+            </div>
+        </div>
+
+        <!-- Sección CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1c" [disabled]="!seccionArr[2][0] && total >= 8">
+                <label class="custom-control-label" for="customSwitch1c">Táctil</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2c" [disabled]="!seccionArr[2][1] && total >= 8">
+                <label class="custom-control-label" for="customSwitch2c">Expresivo</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3c" [disabled]="!seccionArr[2][2] && total >= 8">
+                <label class="custom-control-label" for="customSwitch3c">Sensitivo</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4c" [disabled]="!seccionArr[2][3] && total >= 8">
+                <label class="custom-control-label" for="customSwitch4c">Sociable</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5c" [disabled]="!seccionArr[2][4] && total >= 8">
+                <label class="custom-control-label" for="customSwitch5c">Musical</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6c" [disabled]="!seccionArr[2][5] && total >= 8">
+                <label class="custom-control-label" for="customSwitch6c">Kinestésico</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7c" [disabled]="!seccionArr[2][6] && total >= 8">
+                <label class="custom-control-label" for="customSwitch7c">Sentimental</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8c" [disabled]="!seccionArr[2][7] && total >= 8">
+                <label class="custom-control-label" for="customSwitch8c">Atento</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9c" [disabled]="!seccionArr[2][8] && total >= 8">
+                <label class="custom-control-label" for="customSwitch9c">Interpersonal</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10c" [disabled]="!seccionArr[2][9] && total >= 8">
+                <label class="custom-control-label" for="customSwitch10c">Amiguero</label>
+            </div>
+        </div>
+
+        <!-- Sección DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1d" [disabled]="!seccionArr[3][0] && total >= 8">
+                <label class="custom-control-label" for="customSwitch1d">Experimentador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2d" [disabled]="!seccionArr[3][1] && total >= 8">
+                <label class="custom-control-label" for="customSwitch2d">Ideador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3d" [disabled]="!seccionArr[3][2] && total >= 8">
+                <label class="custom-control-label" for="customSwitch3d">Integrador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4d" [disabled]="!seccionArr[3][3] && total >= 8">
+                <label class="custom-control-label" for="customSwitch4d">Diseñador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5d" [disabled]="!seccionArr[3][4] && total >= 8">
+                <label class="custom-control-label" for="customSwitch5d">Sintetizador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6d" [disabled]="!seccionArr[3][5] && total >= 8">
+                <label class="custom-control-label" for="customSwitch6d">Conceptualizador</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7d" [disabled]="!seccionArr[3][6] && total >= 8">
+                <label class="custom-control-label" for="customSwitch7d">Estratégico</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8d" [disabled]="!seccionArr[3][7] && total >= 8">
+                <label class="custom-control-label" for="customSwitch8d">Instintivo</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9d" [disabled]="!seccionArr[3][8] && total >= 8">
+                <label class="custom-control-label" for="customSwitch9d">Imaginativo</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10d" [disabled]="!seccionArr[3][9] && total >= 8">
+                <label class="custom-control-label" for="customSwitch10d">Resolutor Intuitivo</label>
+            </div>
+        </div>
+
+        <!-- <div class="after-box ">
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+        </div> -->
+      <!-- </form> -->
+    </div>
+    <!-- /.card-body -->
+
+    <div class="btn-align">
+        <button type="button" class="btn btn-outline-primary">Siguiente</button>
+    </div>
+
+</div>
+<!-- /.card -->

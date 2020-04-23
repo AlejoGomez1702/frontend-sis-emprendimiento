@@ -33,30 +33,23 @@
             </a>
           </li>
 
-          <!-- Rutas menu de despliegue -->
+          <!-- Actividades de aprendizaje -->
           <li class="nav-item has-treeview" (click)="addClass()">
             <a href="#" class="nav-link" >
-              <i class="nav-icon fa fa-map-marker"></i>
+              <i class="nav-icon fa fa-gamepad"></i>
               <p>
-                CRUD
+                Actividades 
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <!-- READ -->
+              <!-- TEST DE HERRMANN -->
               <li class="nav-item">
-                <a routerLink="/dashboard/routes" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
-                  <i class="fa fa-eye nav-icon"></i>
-                  <p>Ver Recursos</p>
+                <a routerLink="/dashboard/herrmann" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+                  <i class="fa fa-text-width nav-icon"></i>
+                  <p>Modelo Herrmann</p>
                 </a>
-              </li>
-              <!-- CREATE -->
-              <li class="nav-item">
-                <a routerLink="/dashboard/routes/new" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}" class="nav-link">
-                  <i class="fa fa-plus-circle nav-icon"></i>
-                  <p>Agregar Recurso</p>
-                </a>
-              </li>              
+              </li>             
             </ul>
           </li>
         </ul>

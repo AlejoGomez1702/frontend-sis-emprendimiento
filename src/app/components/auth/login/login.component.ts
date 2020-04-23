@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit
 {
 
   public form = {
-    email: null,
-    password:null
+      email: null,
+      password:null       
   }
 
   public error = null;
@@ -58,6 +58,7 @@ export class LoginComponent implements OnInit
 
   login()
   {
+    console.log(this.form);
     this.spinner.show();
     this.service.login(this.form).subscribe(
       res => this.handleResponse(res),
@@ -67,10 +68,11 @@ export class LoginComponent implements OnInit
 
   handleResponse(res)
   {
+    console.log(res);
     this.spinner.hide();
     //console.log(res.user.role.name == 'admin');
     
-    this.token.createToken(res.access_token);
+    this.token.createToken(res.acces_token);
     if(res.user){
       this.router.navigateByUrl('/dashboard');
     }
@@ -78,6 +80,7 @@ export class LoginComponent implements OnInit
 
   handleError(err)
   {
+    console.log(err);
     this.spinner.hide();
     this.error = err.error.error;
   }

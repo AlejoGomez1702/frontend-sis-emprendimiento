@@ -9,7 +9,7 @@
                     <span class="focus-input100" data-placeholder="Nombres"></span>
                 </div>
                 <div class="wrap-input100 my-4">
-                    <input type="text" class="input100" (blur)="addClass()" name="lastname" id="lastname" [(ngModel)]="form.lastname" required>
+                    <input type="text" class="input100" (blur)="addClass()" name="surname" id="surname" [(ngModel)]="form.surname" required>
                     <span class="focus-input100" data-placeholder="Apellidos"></span>
                 </div>
                 <div class="wrap-input100 mt-4">
@@ -28,7 +28,7 @@
                     <span>{{ error.password }}</span>
                 </div>
                 <div class="wrap-input100 my-4">
-                    <input type="password" (blur)="addClass()" name="password_confirmation" id="password_confirmation" class="input100" [(ngModel)]="form.password_confirmation" required>
+                    <input type="password" (blur)="addClass()" name="password_confirmation" id="password_confirmation" class="input100" [(ngModel)]="password_confirmation" required>
                     <span class="focus-input100" data-placeholder="Confirme la contraseña"></span>
                 </div>
                 
