@@ -15,7 +15,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { NotFoundComponent } from './components/common/not-found/not-found.component'; // => error 404. 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
-import { ChartsModule } from 'ng2-charts'; // => Gráficas
+// import { ChartsModule } from 'ng2-charts'; // => Gráficas
 
 
 @NgModule({
@@ -31,7 +31,7 @@ import { ChartsModule } from 'ng2-charts'; // => Gráficas
     SnotifyModule,
     Ng4LoadingSpinnerModule.forRoot(),
     BrowserAnimationsModule,    
-    ChartsModule
+    // ChartsModule
   ],
   
   providers: [
