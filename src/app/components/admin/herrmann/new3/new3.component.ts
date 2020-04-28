@@ -4,11 +4,11 @@ import { ActivityHerrmannOne } from '@myInterfaces/herrmann/activity-herman-one'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-new',
-  templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css']
+  selector: 'app-new3',
+  templateUrl: './new3.component.html',
+  styleUrls: ['./new3.component.css']
 })
-export class NewComponent implements OnInit 
+export class New3Component implements OnInit 
 {
   //Form para enviar al backend.
   public form: ActivityHerrmannOne;
@@ -20,18 +20,19 @@ export class NewComponent implements OnInit
   public seccionD: number;
 
   // Acumulador por todas las secciones.
-  public total: number;
+  //public total: number;
 
   // Representan el estado de las opciones que el usuario a seleccionado.
   public seccionArr: boolean[][];
+
+  // Lo utilizo para saber el estado de las filas.
+  public rows: boolean[];
 
   constructor(
     private herrmannService: HerrmannService,
     private router: Router
   ) 
-  { 
-    this.initElements();
-  }
+  { }
 
   ngOnInit() 
   {
@@ -44,13 +45,7 @@ export class NewComponent implements OnInit
    * @param option Cual de las 10 opcione es.
    */
   plusOrMinusSection(section: number, option: number)
-  {
-    console.log(this.seccionArr);
-    console.log("seccion A: " + this.seccionA);
-    console.log("seccion B: " + this.seccionB);
-    console.log("seccion C: " + this.seccionC);
-    console.log("seccion D: " + this.seccionD);
-    
+  {    
     let optionSelected = option - 1;
     let sectionSelected = section - 1;
     let active = this.seccionArr[sectionSelected][optionSelected];
@@ -64,34 +59,9 @@ export class NewComponent implements OnInit
     }
     else // de Desactivado ..a.. Activado.
     {
-      let isMax = this.verifyCount();
-      if(isMax) // si aun se pueden seleccionar mas opciones.
-      {
-        this.seccionArr[sectionSelected][optionSelected] = true;
-        this.modifyState(section, true);
-        return true;
-      }
-      else
-      {
-        return false;
-      }
+      this.seccionArr[sectionSelected][optionSelected] = true;
+      this.modifyState(section, true);
     }
-  }
-
-  /**
-   * Verifica si se puede incrementar una opción mas.
-   * True => Se pueden incrementar; False => NO se puede incrementar.
-   */
-  verifyCount()
-  {
-    let max = 8; //Se permite seleccionar máximo 8 opciones.
-    let total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
-    if(total == max) //si se han seleccionado las 8 opciones posibles.
-    {
-      return false
-    }    
-
-    return true;
   }
 
   /**
@@ -111,7 +81,7 @@ export class NewComponent implements OnInit
     this.seccionC = 0;
     this.seccionD = 0;
 
-    this.total = 0;
+    //this.total = 0;
 
     this.seccionArr = [
       [false,false,false,false,false,false,false,false,false,false],
@@ -119,9 +89,15 @@ export class NewComponent implements OnInit
       [false,false,false,false,false,false,false,false,false,false],
       [false,false,false,false,false,false,false,false,false,false]
     ];
+
+    this.rows = [
+      //false,false,false,false,false,false,false,false,false,false
+      true,true,true,true,true,true,true,true,true,true
+    ];
+
   }
 
-  /**
+    /**
    * 
    * @param section 
    * @param option 
@@ -180,9 +156,53 @@ export class NewComponent implements OnInit
         break;
     }
 
-    this.total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
+    //this.total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
   }
 
+  /**
+   * Verifica si se puede incrementar una opción mas.
+   * True => Se pueden incrementar; False => NO se puede incrementar.
+   */
+  verifyCount()
+  {
+    let max = 8; //Se permite seleccionar máximo 8 opciones.
+    let total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
+    if(total == max) //si se han seleccionado las 8 opciones posibles.
+    {
+      return false
+    }    
+
+    return true;
+  }
+
+  verifyRow(row: number)
+  {
+    let rowSelected = row - 1;
+    let flag = true;
+
+    for(let i = 0; i < 4; i++)
+    {
+      if(this.seccionArr[i][rowSelected])
+      {
+        flag = false; // se deben sesactivar las columnas.
+        break;
+      }
+    }
+    //console.log('Acumulador => ' + acum);
+
+    if(flag) // si no se ah seleccionado ningúna opción por la fila.
+    {
+      this.rows[rowSelected] = true; //Se activa las opciones de la fila.
+      //return true;
+    }
+    else
+    {
+      this.rows[rowSelected] = false; // Se desactivan las demas opciones.
+      //return false;
+    }
+  }
+
+  //***************************/
   addActivity()
   {
     this.form.sectionA = this.seccionA;
@@ -200,17 +220,34 @@ export class NewComponent implements OnInit
   {
     if(res.code == 200)
     {
-      this.router.navigateByUrl('/dashboard/herrmann/new2');
+      //Llamo a la ruta de la interpretación.
+      // this.herrmannService.interpretHerrmann().subscribe(
+      //   res => this.handleResponseInterpret(res),
+      //   error => this.handleError(error)
+      // );  
+
+      this.router.navigateByUrl('/dashboard/herrmann/interpret');
     }
 
     /////************SPINNERRRRRRRRRR */
     
   }
 
+  // handleResponseInterpret(res)
+  // {
+  //   if(res.code == 200)
+  //   {
+                        
+
+  //     //this.router.navigateByUrl('/dashboard/herrmann');
+  //   }
+  // }
+
   handleError(err)
   {
+    console.log("errrrrrrrrorr");
+    console.log(err)
     /////************SPINNERRRRRRRRRR */
   }
-
 
 }

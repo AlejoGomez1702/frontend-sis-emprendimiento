@@ -4,11 +4,11 @@ import { ActivityHerrmannOne } from '@myInterfaces/herrmann/activity-herman-one'
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-new',
-  templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css']
+  selector: 'app-new2',
+  templateUrl: './new2.component.html',
+  styleUrls: ['./new2.component.css']
 })
-export class NewComponent implements OnInit 
+export class New2Component implements OnInit 
 {
   //Form para enviar al backend.
   public form: ActivityHerrmannOne;
@@ -29,9 +29,7 @@ export class NewComponent implements OnInit
     private herrmannService: HerrmannService,
     private router: Router
   ) 
-  { 
-    this.initElements();
-  }
+  { }
 
   ngOnInit() 
   {
@@ -79,22 +77,6 @@ export class NewComponent implements OnInit
   }
 
   /**
-   * Verifica si se puede incrementar una opción mas.
-   * True => Se pueden incrementar; False => NO se puede incrementar.
-   */
-  verifyCount()
-  {
-    let max = 8; //Se permite seleccionar máximo 8 opciones.
-    let total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
-    if(total == max) //si se han seleccionado las 8 opciones posibles.
-    {
-      return false
-    }    
-
-    return true;
-  }
-
-  /**
    * Inicializa los componentes a su estado inicial.
    */
   initElements()
@@ -121,7 +103,7 @@ export class NewComponent implements OnInit
     ];
   }
 
-  /**
+    /**
    * 
    * @param section 
    * @param option 
@@ -183,6 +165,23 @@ export class NewComponent implements OnInit
     this.total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
   }
 
+  /**
+   * Verifica si se puede incrementar una opción mas.
+   * True => Se pueden incrementar; False => NO se puede incrementar.
+   */
+  verifyCount()
+  {
+    let max = 8; //Se permite seleccionar máximo 8 opciones.
+    let total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
+    if(total == max) //si se han seleccionado las 8 opciones posibles.
+    {
+      return false
+    }    
+
+    return true;
+  }
+
+  //***************************/
   addActivity()
   {
     this.form.sectionA = this.seccionA;
@@ -200,7 +199,7 @@ export class NewComponent implements OnInit
   {
     if(res.code == 200)
     {
-      this.router.navigateByUrl('/dashboard/herrmann/new2');
+      this.router.navigateByUrl('/dashboard/herrmann/new3');
     }
 
     /////************SPINNERRRRRRRRRR */

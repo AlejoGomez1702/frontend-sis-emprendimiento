@@ -6,8 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HerrmannService 
 {
-
   public API_URL = "http://localhost:8000/api/";
+  public test_id: number;
 
   public header = {
     headers: {
@@ -23,11 +23,28 @@ export class HerrmannService
   createHerrmann()
   {
     // let headers =  new HttpHeaders().set('Authorization', localStorage.getItem('token'));
-    console.log('El token es: ');
-    console.log(localStorage.getItem('token'));
+    //console.log('El token es: ');
+    //console.log(localStorage.getItem('token'));
 
     return this.http.post(this.API_URL + 'create/herrmann', this.header);
   }
+
+  addActivityHerrmann(form)
+  {
+    return this.http.post(this.API_URL + 'add/activity/' + this.test_id, form, this.header);
+  }
+
+  interpretHerrmann()
+  {
+    return this.http.post(this.API_URL + "interpret/herrmann/" + this.test_id, this.test_id, this.header);
+  }
+
+  saveTestId(idTest)
+  {
+    this.test_id = idTest;
+  }
+
+
 
 
 }

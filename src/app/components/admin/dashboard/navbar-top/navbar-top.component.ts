@@ -41,7 +41,7 @@ export class NavbarTopComponent implements OnInit {
   }
 
   handleResponse(data){
-    this.token.logout();
+    //this.token.logout();
     this.router.navigateByUrl('/user/login')
   }
 

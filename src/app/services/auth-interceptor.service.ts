@@ -8,7 +8,8 @@ import Swal from 'sweetalert2'
 @Injectable({
   providedIn: 'root'
 })
-export class AuthInterceptorService implements HttpInterceptor {
+export class AuthInterceptorService implements HttpInterceptor 
+{
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
@@ -27,7 +28,7 @@ export class AuthInterceptorService implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401 && token) {
-          this.token.logout();
+          //this.token.logout();
           this.mostrarMensaje()
         }
 

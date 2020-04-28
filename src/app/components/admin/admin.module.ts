@@ -12,6 +12,9 @@ import { FooterListsComponent } from '../common/footer-lists/footer-lists.compon
 import { MainSectionComponent } from './dashboard/main-section/main-section.component';
 import { WelcomeComponent } from './herrmann/welcome/welcome.component';
 import { NewComponent } from './herrmann/new/new.component';
+import { New2Component } from './herrmann/new2/new2.component';
+import { New3Component } from './herrmann/new3/new3.component';
+import { ResultsComponent } from './herrmann/results/results.component';
 
 @NgModule({
   
@@ -21,7 +24,11 @@ import { NewComponent } from './herrmann/new/new.component';
     NavbarTopComponent,
     FooterListsComponent, 
     MainSectionComponent, 
-    WelcomeComponent, NewComponent 
+    WelcomeComponent, 
+    NewComponent, 
+    New2Component, 
+    New3Component, 
+    ResultsComponent 
   ],  
   imports: [
     CommonModule,

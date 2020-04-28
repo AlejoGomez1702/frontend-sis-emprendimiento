@@ -1,0 +1,277 @@
+<div class="center-text">
+    <h1>Sección #3</h1>
+    <h4 class="paint-text">Seleccione 1 característica por cada <b>FILA</b> con la que más se sienta identificado:</h4>
+</div>
+<!-- general form elements disabled -->
+<div class="card card-secondary spacing">
+    <!-- <div class="card-header">
+      <h3 class="card-title">Custom Elements</h3>
+    </div> -->
+    <!-- /.card-header -->
+    <div class="card-body size-body">
+      <!-- <form role="form"> -->
+        <!-- Sección AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,1); verifyRow(1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1a" [disabled]="!seccionArr[0][0] && !rows[0]">
+                <label class="custom-control-label" for="customSwitch1a">Investigar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,2); verifyRow(2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2a" [disabled]="!seccionArr[0][1] && !rows[1]">
+                <label class="custom-control-label" for="customSwitch2a">Crear</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,3); verifyRow(3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3a" [disabled]="!seccionArr[0][2] && !rows[2]">
+                <label class="custom-control-label" for="customSwitch3a">Visualizar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,4); verifyRow(4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4a" [disabled]="!seccionArr[0][3] && !rows[3]">
+                <label class="custom-control-label" for="customSwitch4a">Liderar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,5); verifyRow(5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5a" [disabled]="!seccionArr[0][4] && !rows[4]">
+                <label class="custom-control-label" for="customSwitch5a">Vender</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,6); verifyRow(6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6a" [disabled]="!seccionArr[0][5] && !rows[5]">
+                <label class="custom-control-label" for="customSwitch6a">Entretener</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,7); verifyRow(7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7a" [disabled]="!seccionArr[0][6] && !rows[6]">
+                <label class="custom-control-label" for="customSwitch7a">Dibujar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,8); verifyRow(8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8a" [disabled]="!seccionArr[0][7] && !rows[7]">
+                <label class="custom-control-label" for="customSwitch8a">Tomar Riesgo</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,9); verifyRow(9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9a" [disabled]="!seccionArr[0][8] && !rows[8]">
+                <label class="custom-control-label" for="customSwitch9a">Explorar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(1,10); verifyRow(10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10a" [disabled]="!seccionArr[0][9] && !rows[9]">
+                <label class="custom-control-label" for="customSwitch10a">Curiosear</label>
+            </div>
+        </div>
+
+        <!-- Sección BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,1); verifyRow(1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1b" [disabled]="!seccionArr[1][0] && !rows[0]">
+                <label class="custom-control-label" for="customSwitch1b">Enseñar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,2); verifyRow(2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2b" [disabled]="!seccionArr[1][1] && !rows[1]">
+                <label class="custom-control-label" for="customSwitch2b">Relacionarse</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,3); verifyRow(3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3b" [disabled]="!seccionArr[1][2] && !rows[2]">
+                <label class="custom-control-label" for="customSwitch3b">Coordinar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,4); verifyRow(4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4b" [disabled]="!seccionArr[1][3] && !rows[3]">
+                <label class="custom-control-label" for="customSwitch4b">Entender</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,5); verifyRow(5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5b" [disabled]="!seccionArr[1][4] && !rows[4]">
+                <label class="custom-control-label" for="customSwitch5b">Brindar Servicio</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,6); verifyRow(6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6b" [disabled]="!seccionArr[1][5] && !rows[5]">
+                <label class="custom-control-label" for="customSwitch6b">Facilitar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,7); verifyRow(7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7b" [disabled]="!seccionArr[1][6] && !rows[6]">
+                <label class="custom-control-label" for="customSwitch7b">Persuadir</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,8); verifyRow(8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8b" [disabled]="!seccionArr[1][7] && !rows[7]">
+                <label class="custom-control-label" for="customSwitch8b">Aconsejar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,9); verifyRow(9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9b" [disabled]="!seccionArr[1][8] && !rows[8]">
+                <label class="custom-control-label" for="customSwitch9b">Escuchar a Otros</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(2,10); verifyRow(10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10b" [disabled]="!seccionArr[1][9] && !rows[9]">
+                <label class="custom-control-label" for="customSwitch10b">Confortar</label>
+            </div>
+        </div>
+
+        <!-- Sección CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,1); verifyRow(1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1c" [disabled]="!seccionArr[2][0] && !rows[0]">
+                <label class="custom-control-label" for="customSwitch1c">Documentar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,2); verifyRow(2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2c" [disabled]="!seccionArr[2][1] && !rows[1]">
+                <label class="custom-control-label" for="customSwitch2c">Seleccionar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,3); verifyRow(3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3c" [disabled]="!seccionArr[2][2] && !rows[2]">
+                <label class="custom-control-label" for="customSwitch3c">Relevar Proceso</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,4); verifyRow(4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4c" [disabled]="!seccionArr[2][3] && !rows[3]">
+                <label class="custom-control-label" for="customSwitch4c">Administrar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,5); verifyRow(5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5c" [disabled]="!seccionArr[2][4] && !rows[4]">
+                <label class="custom-control-label" for="customSwitch5c">Supervisar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,6); verifyRow(6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6c" [disabled]="!seccionArr[2][5] && !rows[5]">
+                <label class="custom-control-label" for="customSwitch6c">Detallar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,7); verifyRow(7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7c" [disabled]="!seccionArr[2][6] && !rows[6]">
+                <label class="custom-control-label" for="customSwitch7c">Implem. Soluciones</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,8); verifyRow(8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8c" [disabled]="!seccionArr[2][7] && !rows[7]">
+                <label class="custom-control-label" for="customSwitch8c">Controlar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,9); verifyRow(9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9c" [disabled]="!seccionArr[2][8] && !rows[8]">
+                <label class="custom-control-label" for="customSwitch9c">Organizar u Ordenar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(3,10); verifyRow(10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10c" [disabled]="!seccionArr[2][9] && !rows[9]">
+                <label class="custom-control-label" for="customSwitch10c">Llevar Cuentas</label>
+            </div>
+        </div>
+
+        <!-- Sección DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD -->
+        <div class="form-group box">
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,1); verifyRow(1)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1d" [disabled]="!seccionArr[3][0] && !rows[0]">
+                <label class="custom-control-label" for="customSwitch1d">Pensar En Abstracto</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,2); verifyRow(2)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2d" [disabled]="!seccionArr[3][1] && !rows[1]">
+                <label class="custom-control-label" for="customSwitch2d">Formular Políticas</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,3); verifyRow(3)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch3d" [disabled]="!seccionArr[3][2] && !rows[2]">
+                <label class="custom-control-label" for="customSwitch3d">Criticar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,4); verifyRow(4)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch4d" [disabled]="!seccionArr[3][3] && !rows[3]">
+                <label class="custom-control-label" for="customSwitch4d">Analizar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,5); verifyRow(5)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch5d" [disabled]="!seccionArr[3][4] && !rows[4]">
+                <label class="custom-control-label" for="customSwitch5d">Buscar Desafíos</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,6); verifyRow(6)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch6d" [disabled]="!seccionArr[3][5] && !rows[5]">
+                <label class="custom-control-label" for="customSwitch6d">Gerenciar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,7); verifyRow(7)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch7d" [disabled]="!seccionArr[3][6] && !rows[6]">
+                <label class="custom-control-label" for="customSwitch7d">Temas Financieros</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,8); verifyRow(8)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch8d" [disabled]="!seccionArr[3][7] && !rows[7]">
+                <label class="custom-control-label" for="customSwitch8d">Gusta La Técnica</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,9); verifyRow(9)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch9d" [disabled]="!seccionArr[3][8] && !rows[8]">
+                <label class="custom-control-label" for="customSwitch9d">Matematizar</label>
+            </div>
+
+            <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success"
+            (change)="plusOrMinusSection(4,10); verifyRow(10)">
+                <input type="checkbox" class="custom-control-input" id="customSwitch10d" [disabled]="!seccionArr[3][9] && !rows[9]">
+                <label class="custom-control-label" for="customSwitch10d">Argumentar</label>
+            </div>
+        </div>
+
+        <!-- <div class="after-box ">
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+        </div> -->
+      <!-- </form> -->
+    </div>
+    <!-- /.card-body -->
+
+    <div class="btn-align">
+        <button type="button" class="btn btn-outline-primary" (click)="addActivity()">Siguiente</button>
+    </div>
+
+</div>
+<!-- /.card -->
