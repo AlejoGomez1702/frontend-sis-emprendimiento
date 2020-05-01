@@ -16,6 +16,8 @@ import { New2Component } from './herrmann/new2/new2.component';
 import { New3Component } from './herrmann/new3/new3.component';
 import { ResultsComponent } from './herrmann/results/results.component';
 
+import { ChartsModule } from 'ng2-charts'; // => Gráficos 
+
 @NgModule({
   
   declarations: [
@@ -36,6 +38,7 @@ import { ResultsComponent } from './herrmann/results/results.component';
     FontAwesomeModule,
     FormsModule, 
     MaterialModule,  
+    ChartsModule
   ],
   providers: [
     DatePipe,

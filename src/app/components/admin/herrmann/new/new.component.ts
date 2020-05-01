@@ -45,11 +45,11 @@ export class NewComponent implements OnInit
    */
   plusOrMinusSection(section: number, option: number)
   {
-    console.log(this.seccionArr);
-    console.log("seccion A: " + this.seccionA);
-    console.log("seccion B: " + this.seccionB);
-    console.log("seccion C: " + this.seccionC);
-    console.log("seccion D: " + this.seccionD);
+    // console.log(this.seccionArr);
+    // console.log("seccion A: " + this.seccionA);
+    // console.log("seccion B: " + this.seccionB);
+    // console.log("seccion C: " + this.seccionC);
+    // console.log("seccion D: " + this.seccionD);
     
     let optionSelected = option - 1;
     let sectionSelected = section - 1;
