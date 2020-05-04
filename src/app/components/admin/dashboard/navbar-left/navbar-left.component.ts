@@ -51,7 +51,7 @@ export class NavbarLeftComponent implements OnInit
   handleResponse(data)
   {
     this.user = data.user;
-    this.username = this.user.name + " " + this.user.lastname; 
+    this.username = this.user.name + " " + this.user.surname; 
     console.log(data);
   }
 

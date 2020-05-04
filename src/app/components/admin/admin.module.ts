@@ -16,7 +16,8 @@ import { New2Component } from './herrmann/new2/new2.component';
 import { New3Component } from './herrmann/new3/new3.component';
 import { ResultsComponent } from './herrmann/results/results.component';
 
-import { ChartsModule } from 'ng2-charts'; // => Gráficos 
+import { ChartsModule } from 'ng2-charts';
+import { MeComponent } from './me/me.component'; // => Gráficos 
 
 @NgModule({
   
@@ -30,7 +31,7 @@ import { ChartsModule } from 'ng2-charts'; // => Gráficos
     NewComponent, 
     New2Component, 
     New3Component, 
-    ResultsComponent 
+    ResultsComponent, MeComponent 
   ],  
   imports: [
     CommonModule,

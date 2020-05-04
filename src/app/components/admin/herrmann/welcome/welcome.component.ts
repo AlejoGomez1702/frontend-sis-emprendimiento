@@ -20,9 +20,17 @@ export class WelcomeComponent implements OnInit
   ngOnInit() 
   {}
 
+  showSpinner()
+  {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000)
+  }
+
   initTest()
   {
-    //this.spinner.show();
+    this.showSpinner();
     // console.log('Llamando a la funcion inittest');
 
     this.herrmannService.createHerrmann().subscribe(

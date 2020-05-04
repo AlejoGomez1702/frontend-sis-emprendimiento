@@ -14,7 +14,7 @@ export class MainService
 
   public header = {
     headers: {
-      'Authorization': 'Bearer ' + localStorage.getItem('token')
+      'Authorization': localStorage.getItem('token')
     }
   };
 

@@ -43,8 +43,9 @@ export class TokenService {
     return false;
   }
 
-  // logout(){
-  //   console.log("cerrar sesion");
-  //   //localStorage.removeItem('token')
-  // }
+  logout()
+  {
+    //console.log("cerrar sesion");
+    localStorage.removeItem('token')
+  }
 }

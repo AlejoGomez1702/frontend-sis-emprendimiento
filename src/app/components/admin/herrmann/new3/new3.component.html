@@ -270,7 +270,7 @@
     <!-- /.card-body -->
 
     <div class="btn-align">
-        <button type="button" class="btn btn-outline-primary" (click)="addActivity()">Siguiente</button>
+        <button type="button" class="btn btn-outline-primary" (click)="addActivity()" [disabled]="!finish">Siguiente</button>
     </div>
 
 </div>

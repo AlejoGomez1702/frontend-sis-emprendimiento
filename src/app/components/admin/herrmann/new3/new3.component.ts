@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HerrmannService } from '@myServices/herrmann.service';
 import { ActivityHerrmannOne } from '@myInterfaces/herrmann/activity-herman-one';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,24 +20,49 @@ export class New3Component implements OnInit
   public seccionC: number;
   public seccionD: number;
 
-  // Acumulador por todas las secciones.
-  //public total: number;
-
   // Representan el estado de las opciones que el usuario a seleccionado.
   public seccionArr: boolean[][];
 
   // Lo utilizo para saber el estado de las filas.
   public rows: boolean[];
 
+  // Valida si ya se han seleccionado todas las opciones.
+  public finish: boolean;
+
   constructor(
     private herrmannService: HerrmannService,
-    private router: Router
+    private router: Router,
+    private spinner: Ng4LoadingSpinnerService
   ) 
   { }
 
   ngOnInit() 
   {
     this.initElements();
+  }
+
+  /**
+   * Verifica que se hayan seleccionado todos los campos.
+   */
+  verifyFinish()
+  {
+    let count = 0;
+    for (let i = 0; i < this.rows.length; i++)
+    {
+      if (this.rows[i]) 
+      {
+        count ++;
+      }
+    }
+
+    if(count == 0)
+    {
+      this.finish = true;
+    }
+    else
+    {
+      this.finish = false;
+    }
   }
 
   /**
@@ -62,6 +88,8 @@ export class New3Component implements OnInit
       this.seccionArr[sectionSelected][optionSelected] = true;
       this.modifyState(section, true);
     }
+
+    //this.verifyFinish();
   }
 
   /**
@@ -69,6 +97,8 @@ export class New3Component implements OnInit
    */
   initElements()
   {
+    this.finish = false;
+
     this.form = {
       sectionA: 0,
       sectionB: 0,
@@ -159,24 +189,10 @@ export class New3Component implements OnInit
     //this.total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
   }
 
-  /**
-   * Verifica si se puede incrementar una opción mas.
-   * True => Se pueden incrementar; False => NO se puede incrementar.
-   */
-  verifyCount()
-  {
-    let max = 8; //Se permite seleccionar máximo 8 opciones.
-    let total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
-    if(total == max) //si se han seleccionado las 8 opciones posibles.
-    {
-      return false
-    }    
-
-    return true;
-  }
-
   verifyRow(row: number)
   {
+    console.log("Las filas son: ")
+    console.log(this.rows)
     let rowSelected = row - 1;
     let flag = true;
 
@@ -200,11 +216,22 @@ export class New3Component implements OnInit
       this.rows[rowSelected] = false; // Se desactivan las demas opciones.
       //return false;
     }
+    this.verifyFinish();
+  }
+
+  showSpinner()
+  {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000)
   }
 
   //***************************/
   addActivity()
   {
+    this.showSpinner();
+
     this.form.sectionA = this.seccionA;
     this.form.sectionB = this.seccionB;
     this.form.sectionC = this.seccionC;

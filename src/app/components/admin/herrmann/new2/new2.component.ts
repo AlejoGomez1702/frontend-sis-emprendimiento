@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HerrmannService } from '@myServices/herrmann.service';
 import { ActivityHerrmannOne } from '@myInterfaces/herrmann/activity-herman-one';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,7 +28,8 @@ export class New2Component implements OnInit
 
   constructor(
     private herrmannService: HerrmannService,
-    private router: Router
+    private router: Router,
+    private spinner: Ng4LoadingSpinnerService
   ) 
   { }
 
@@ -43,11 +45,6 @@ export class New2Component implements OnInit
    */
   plusOrMinusSection(section: number, option: number)
   {
-    // console.log(this.seccionArr);
-    // console.log("seccion A: " + this.seccionA);
-    // console.log("seccion B: " + this.seccionB);
-    // console.log("seccion C: " + this.seccionC);
-    // console.log("seccion D: " + this.seccionD);
     
     let optionSelected = option - 1;
     let sectionSelected = section - 1;
@@ -181,9 +178,18 @@ export class New2Component implements OnInit
     return true;
   }
 
+  showSpinner()
+  {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000)
+  }
+
   //***************************/
   addActivity()
   {
+    this.showSpinner();
     this.form.sectionA = this.seccionA;
     this.form.sectionB = this.seccionB;
     this.form.sectionC = this.seccionC;
@@ -201,9 +207,6 @@ export class New2Component implements OnInit
     {
       this.router.navigateByUrl('/dashboard/herrmann/new3');
     }
-
-    /////************SPINNERRRRRRRRRR */
-    
   }
 
   handleError(err)

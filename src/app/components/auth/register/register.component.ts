@@ -3,7 +3,9 @@ import { AuthService } from '@myServices/auth.service';
 import { TokenService } from '@myServices/token.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 declare var $:any;
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -24,7 +26,14 @@ export class RegisterComponent implements OnInit
     email:null,
     password:null
   };
-  constructor(private service:AuthService,private token:TokenService,private spinner:Ng4LoadingSpinnerService,private router:Router) { }
+
+  constructor(
+    private service:AuthService,
+    private token:TokenService,
+    private spinner:Ng4LoadingSpinnerService,
+    private router:Router
+  ) 
+  { }
 
   addClass()
   {
@@ -42,9 +51,17 @@ export class RegisterComponent implements OnInit
   ngOnInit() {
   }
 
-  register()
+  showSpinner()
   {
     this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 1500)
+  }
+
+  register()
+  {
+    this.showSpinner();
     if(this.password_confirmation == this.form.password)
     {
       this.service.signup(this.form).subscribe(
@@ -54,15 +71,26 @@ export class RegisterComponent implements OnInit
     }
     else
     {
-      console.log("jajajajjajajajajaj");
+      Swal.fire(
+        'Error!',
+        'Las contraseñas introducidas no coinciden!',
+        'error'
+      )
     }
   }
 
-  handleResponse(data){
-    console.log(data);
-    this.spinner.hide()
-    this.token.createToken(data.access_token);
-    this.router.navigateByUrl('/dashboard');
+  handleResponse(data)
+  {
+    //console.log(data);
+    //this.spinner.hide()
+    //this.token.createToken(data.access_token);
+    Swal.fire(
+      'Exito!',
+      'Te haz registrado correctamente!',
+      'success'
+    );
+
+    this.router.navigateByUrl('/user/login');
   }
 
   handleError(error){

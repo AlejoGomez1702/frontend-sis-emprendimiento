@@ -4,7 +4,7 @@ export interface User
     //role_id: number,
     //admin_id: number,
     name: string,
-    lastname: string,
+    surname: string,
     dni: string,
     email?: string,
     password?:string

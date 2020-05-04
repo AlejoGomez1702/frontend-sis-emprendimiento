@@ -8,6 +8,7 @@ import { NewComponent } from '@myComponents/admin/herrmann/new/new.component';
 import { New2Component } from '@myComponents/admin/herrmann/new2/new2.component';
 import { New3Component } from './herrmann/new3/new3.component';
 import { ResultsComponent } from './herrmann/results/results.component';
+import { MeComponent } from './me/me.component';
   
 const routes: Routes = [
   {
@@ -26,6 +27,14 @@ const routes: Routes = [
       {path: 'new2', component: New2Component},
       {path: 'new3', component: New3Component},
       {path: 'interpret', component: ResultsComponent}
+    ]
+  },
+  {
+    path: 'me',
+    component: PagesComponent,
+    canActivate: [AfterLoginGuard],
+    children: [
+      {path: '', component: MeComponent}
     ]
   }
 ];

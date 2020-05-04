@@ -58,17 +58,12 @@ export class ResultsComponent implements OnInit
     // if(this.interpretationHerrmann.code == 200)
     // {
     //   console
-    let information: SingleDataSet = [this.interpretationHerrmann.scors.A,
-                                      this.interpretationHerrmann.scors.B,
+    let information: SingleDataSet = [this.interpretationHerrmann.scors.D,
                                       this.interpretationHerrmann.scors.C,
-                                      this.interpretationHerrmann.scors.D];
+                                      this.interpretationHerrmann.scors.B,
+                                      this.interpretationHerrmann.scors.A];
 
     this.polarAreaChartData = information;
-
-      // this.polarAreaChartData[0] = this.interpretationHerrmann.scors.A;
-      // this.polarAreaChartData[1] = this.interpretationHerrmann.scors.B;
-      // this.polarAreaChartData[2] = this.interpretationHerrmann.scors.C;
-      // this.polarAreaChartData[3] = this.interpretationHerrmann.scors.D;
     // }
     //console.log(this.polarAreaChartData);
   }
