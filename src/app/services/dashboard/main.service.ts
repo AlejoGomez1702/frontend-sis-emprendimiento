@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { User } from '@myInterfaces/user';
 import { GeneralInformation } from '@myInterfaces/general-information';
+import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class MainService 
 {
   // public API_URI = "http://aqueous-ridge-01368.herokuapp.com/api/"
-  public API_URI = "http://localhost:8000/api/"
+  // public API_URI = "http://localhost:8000/api/";
 
   public header = {
     headers: {
@@ -28,14 +29,14 @@ export class MainService
    */
   getUser()
   {    
-    return this.http.get<User>(this.API_URI + "me", this.header);
+    return this.http.get<User>(environment.apiUrl + "me", this.header);
   }
 
   updateUser(user)
   {
     console.log("Estoy actualizando al usuario");
     console.log(user);
-    return this.http.put(this.API_URI + "user/update", user, this.header);
+    return this.http.put(environment.apiUrl + "user/update", user, this.header);
   }
 
   /**
@@ -43,7 +44,7 @@ export class MainService
    */
   getGeneralInformation(): Observable<GeneralInformation>
   {
-    return this.http.get<GeneralInformation>(this.API_URI + "general", this.header);
+    return this.http.get<GeneralInformation>(environment.apiUrl + "general", this.header);
   }
 
 }

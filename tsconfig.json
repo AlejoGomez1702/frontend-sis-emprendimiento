@@ -6,7 +6,8 @@
       "@myInterfaces/*": ["app/interfaces/*"],
       "@myComponents/*": ["app/components/*"],
       "@myServices/*": ["app/services/*"],
-      "@myGuards/*": ["app/guards/*"]
+      "@myGuards/*": ["app/guards/*"],
+      "@env/*":["environments/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

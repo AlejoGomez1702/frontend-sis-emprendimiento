@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { InterpretationHerrmann } from '@myInterfaces/herrmann/interpretation-herrmann';
 import { Observable } from 'rxjs/internal/Observable';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HerrmannService 
 {
-  public API_URL = "http://localhost:8000/api/";
+  // public API_URL = "http://localhost:8000/api/";
   public test_id: number;
 
   public header = {
@@ -28,18 +29,18 @@ export class HerrmannService
     //console.log('El token es: ');
     //console.log(localStorage.getItem('token'));
 
-    return this.http.post(this.API_URL + 'create/herrmann', this.header);
+    return this.http.post(environment.apiUrl + 'create/herrmann', this.header);
   }
 
   addActivityHerrmann(form)
   {
-    return this.http.post(this.API_URL + 'add/activity/' + this.test_id, form, this.header);
+    return this.http.post(environment.apiUrl + 'add/activity/' + this.test_id, form, this.header);
   }
 
   interpretHerrmann(): Observable<[InterpretationHerrmann]>
   {
     return this.http.post<[InterpretationHerrmann]>
-        (this.API_URL + "interpret/herrmann/" + this.test_id, this.test_id, this.header);
+        (environment.apiUrl + "interpret/herrmann/" + this.test_id, this.test_id, this.header);
   }
 
   saveTestId(idTest)

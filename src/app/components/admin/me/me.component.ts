@@ -3,7 +3,9 @@ import { TokenService } from '@myServices/token.service';
 import { User } from '@myInterfaces/user';
 import {FormControl, Validators} from '@angular/forms';
 import { MainService } from '@myServices/dashboard/main.service';
+import { environment } from '@env/environment';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-me',
@@ -12,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class MeComponent implements OnInit 
 {
+  public apiUrl = environment.apiUrl;
   // Utilizado para la validación del correo electrónico.
   email = new FormControl('', [Validators.required, Validators.email]);
 
@@ -22,15 +25,15 @@ export class MeComponent implements OnInit
 
   public user: User;
   public userUpdate: User;
-
-  private URL = "http://localhost:8000/api/";
+  
+  // private URL = "http://localhost:8000/api/";
 
   public afuConfig = {
     multiple: false,
     formatsAllowed: ".jpg,.png,.gif,.jpeg",
     maxSize: "50",
     uploadAPI:  {
-      url: this.URL + 'user/upload/avatar',
+      url: environment.apiUrl + 'user/upload/avatar',
       headers: {
       "Authorization" : this.tokenService.getToken()
       }
@@ -135,6 +138,11 @@ export class MeComponent implements OnInit
   handleResponseUpdate(data)
   {
     console.log("Exitooooo!!!");
+    Swal.fire(
+      'Exito!',
+      'Datos de usuario modificados correctamente!',
+      'success'
+    );
     //hacer un refresh del token 
     this.tokenService.refresh();
 
@@ -144,8 +152,13 @@ export class MeComponent implements OnInit
 
   handleErrorUpdate(error)
   {
+    Swal.fire(
+      'ERROR!',
+      'Verifique los datos ingresados',
+      'error'
+    )
     console.log("ERRROOOOOORR!!!");
-    console.log(error.error);
+    console.log(error.error.errors.name);
   }
 
   avatarUpload(datos){

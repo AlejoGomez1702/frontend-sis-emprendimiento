@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs'
+import { Observable, throwError } from 'rxjs';
 import { TokenService } from './token.service';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -29,7 +30,7 @@ export class AuthInterceptorService implements HttpInterceptor
       catchError((err: HttpErrorResponse) => {
         if (err.status === 401 && token) {
           //this.token.logout();
-          this.mostrarMensaje()
+          //this.mostrarMensaje()
         }
 
         return throwError( err );

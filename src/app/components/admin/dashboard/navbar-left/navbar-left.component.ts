@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser'
 import { TokenService } from '@myServices/token.service';
 import { MainService } from '@myServices/dashboard/main.service';
 import { User } from '@myInterfaces/user'; 
+import { environment } from '@env/environment';
 declare var $:any;
 
 @Component({
@@ -17,6 +18,8 @@ export class NavbarLeftComponent implements OnInit
    */
   public user: User;
 
+  public apiUrl: string;
+
   /**
    * Nombre de usuario que se va mostrar en el dashboard.
    */
@@ -29,14 +32,26 @@ export class NavbarLeftComponent implements OnInit
   ) 
   { 
     this.title.setTitle('Dashboard');   
-    //  this.getUser();
+    this.initInformation();
+    this.getUser();
   }
 
   ngOnInit() {
     // this.title.setTitle('Dashboard');   
-    this.getUser();
+    //this.getUser();
     //this.username = this.user.name + " " + this.user.lastname; 
     //console.log(this.user);
+  }
+
+  initInformation()
+  {
+    this.apiUrl = environment.apiUrl;
+
+    this.user = {
+      name: "",
+      surname: "",
+      image: "general_user.jpeg"
+    }
   }
 
   getUser()
