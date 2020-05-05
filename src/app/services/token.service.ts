@@ -17,17 +17,18 @@ export class TokenService {
     localStorage.setItem('token',token)
   }
   
-  // refresh() {
-  //    this.http.get(this.API_URI+"/refresh").subscribe(
-  //     data=>this.refreshToken(data),
-  //     error=>console.error(error)
-  //   )
-  // }
+  refresh() {
+     this.http.get(this.API_URI+"/refresh/token").subscribe(
+      data=>this.refreshToken(data),
+      error=>console.error(error)
+    )
+  }
 
-  // refreshToken(data){
-  //   this.createToken(data.access_token)
-  //   location.reload()
-  // }
+  refreshToken(data)
+  {
+    this.createToken(data);
+    location.reload();
+  }
 
   getToken()
   {

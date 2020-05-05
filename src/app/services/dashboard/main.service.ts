@@ -26,9 +26,16 @@ export class MainService
   /**
    * Obtiene los datos del usuario que esta logueado.
    */
-  getUser(): Observable<User>
+  getUser()
   {    
     return this.http.get<User>(this.API_URI + "me", this.header);
+  }
+
+  updateUser(user)
+  {
+    console.log("Estoy actualizando al usuario");
+    console.log(user);
+    return this.http.put(this.API_URI + "user/update", user, this.header);
   }
 
   /**

@@ -1,28 +1,57 @@
-<div class="container">
-    <form class="example-form">
-        <!-- Nombres -->
-        <mat-form-field class="example-full-width">
-            <mat-label>Nombres</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
+<div class="container root-box">        
+    <form class="example-form">      
+        <mat-card class="sidebar-dark-primary title-card">Modificar Mis Datos</mat-card> 
+        <div class="root-box">
+            <!-- Nombres -->
+            <mat-form-field class="example-full-width" >
+                <mat-label>Nombres</mat-label>
+                <input matInput placeholder="Ingrese su nombre completo" name="name" required [(ngModel)]="user.name">
+            </mat-form-field>
 
-        <!-- Apellidos -->
-        <mat-form-field class="example-full-width">
-            <mat-label>Apellidos</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
+            <!-- Apellidos -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Apellidos</mat-label>
+                <input matInput placeholder="Ex. Pizza" value="Sushi" name="surname" required [(ngModel)]="user.surname">
+            </mat-form-field>
 
-        <!-- Correo -->
-        <mat-form-field class="example-full-width">
-            <mat-label>Correo Electrónico</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
+            <!-- Correo -->
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Correo Electrónico</mat-label>
+                <input type="email" matInput placeholder="email@ejemplo.com" name="email" required [(ngModel)]="user.email">
+                <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+            </mat-form-field>
 
-        <!-- Descripción -->
-        <mat-form-field class="example-full-width">
-            <mat-label>Descripción</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-        </mat-form-field>
+            <!-- Descripción -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput placeholder="Ingrese una descripción personal (como es?, gustos, estudios, etc...)" 
+                            name="description" [(ngModel)]="user.description">                    
+                </textarea>
+            </mat-form-field>
+
+            <!-- Imagen del usuario -->
+            <div class="form-group">
+                <label for="image">Cambiar Imagen de Perfil</label>
+                <div class="card">
+                    <div class="card-body">
+                        <!-- <div *ngIf="identity && identity.image!=null"> -->
+                        <img src="{{URL + 'user/download/avatar/' + user.image}}" 
+                        class="imgPerfil" >
+                        <!-- </div> -->
+                        <angular-file-uploader
+                            [config]="afuConfig"
+                            [resetUpload]=true
+                            (ApiResponse)="avatarUpload($event)">
+                        </angular-file-uploader>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
+
+    <div class="btn-align">
+        <button type="button" class="btn btn-outline-success" (click)="updateUser()">Guardar Cambios</button>
+    </div>
+
     <!-- nombre,apellido,email,contraseña,descripcion, imagen -->
 </div>

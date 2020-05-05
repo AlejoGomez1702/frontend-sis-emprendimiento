@@ -1,11 +1,36 @@
 .example-form 
 {
     min-width: 150px;
-    max-width: 500px;
+    max-width: 800px;
     width: 100%;
+    margin-left: 14%;
 }
 
 .example-full-width 
 {
     width: 100%;
+    font-size: large;
+}
+
+.root-box
+{
+    padding-top: 30px;
+}
+
+.title-card
+{
+    font-size: x-large;
+    color:white; 
+    text-align:center;
+}
+
+.imgPerfil{
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.btn-align
+{
+    margin-top: 10px;
+    margin-left: 45%;
 }
