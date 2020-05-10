@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { MatButtonModule,MatCardModule } from '@angular/material';
+import { MatButtonModule,MatCardModule,MatSelectModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material';
@@ -23,7 +23,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         MatSlideToggleModule,
         MatCardModule,
         FormsModule, 
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatSelectModule
     ],
     exports: [
         MatButtonModule,
@@ -35,7 +36,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         MatSlideToggleModule,
         MatCardModule,
         FormsModule, 
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatSelectModule
     ]
 })
 export class MaterialModule 

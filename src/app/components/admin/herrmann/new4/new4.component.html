@@ -1,0 +1,185 @@
+<div class="center-text">
+    <h1>Sección #4</h1>
+    <h4 class="paint-text">Conteste las siguientes afirmaciones con la letra "A" si está de acuerdo o con la "D" si se encuentra en desacuerdo.</h4>
+</div>
+<!-- general form elements disabled -->
+<div class="card card-secondary spacing">
+    <div class="card-body size-body">
+        <ul class="list-group">
+            <!-- Question #1 -->
+            <div>
+                <li class="list-group-item active">1. Casi siempre reviso bien toda posible falla futura antes de iniciar cualquier proyecto para evitar contratiempos.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[0].value == '...'">
+                        <mat-label>{{ questions[0].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[0].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[0].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #2 -->
+            <div>
+                <li class="list-group-item active">2. Normalmente, si no termino un trabajo muy importante, quedo preocupado por los probables señalamientos a mi responsabilidad.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[1].value == '...'">
+                        <mat-label>{{ questions[1].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[1].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[1].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #3 -->
+            <div>
+                <li class="list-group-item active">3. Frecuentemente siento que mis condiciones de vida podrían ser mejores para el esfruerzo que estoy dando.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[2].value == '...'">
+                        <mat-label>{{ questions[2].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[2].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[2].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #4 -->
+            <div>
+                <li class="list-group-item active">4. Normalmente me gusta previsualizar hacia el futuro los problemas y obstáculos que pudieran presentarse en cualquier proyecto.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[3].value == '...'">
+                        <mat-label>{{ questions[3].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[3].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[3].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #5 -->
+            <div>
+                <li class="list-group-item active">5. Varias personas que me conocen creen que soy negativo a la hora de tomar decisiones, pero realmente estoy siendo precavido para evitar riegos.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[4].value == '...'">
+                        <mat-label>{{ questions[4].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[4].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[4].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #6 -->
+            <div>
+                <li class="list-group-item active">6. Normalmente cuando trabajo en equipo, me cercioro de que todos los demás estén haciendo correctamente su trabajo.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[5].value == '...'">
+                        <mat-label>{{ questions[5].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[5].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[5].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #7 -->
+            <div>
+                <li class="list-group-item active">7. Hoy en dia puedo morir tranquilo ya que soy exitoso y también he logrado hasta donde me ha sido posible las metas que me he propuesto.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[6].value == '...'">
+                        <mat-label>{{ questions[6].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[6].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[6].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #8 -->
+            <div>
+                <li class="list-group-item active">8. Normalmente, aunque esté seguro que un proyecto va a fracasar, hasta el último minuto estoy dispuesto a sacarlo adelante.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[7].value == '...'">
+                        <mat-label>{{ questions[7].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[7].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[7].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #9 -->
+            <div>
+                <li class="list-group-item active">9. Soy de los que piensan que el cambio normalmente es sinónimo de oportunidad, felicidad, cosas buenas y diferentes.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[8].value == '...'">
+                        <mat-label>{{ questions[8].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[8].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[8].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #10 -->
+            <div>
+                <li class="list-group-item active">10. Típicamente y en cualquier situación confío en mi equipo de trabajo y normalmente pienso que son muy capaces y hábiles en las labores que se les designan.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[9].value == '...'">
+                        <mat-label>{{ questions[9].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[9].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[9].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #11 -->
+            <div>
+                <li class="list-group-item active">11. Muchas personas que me conocen creen que actúo sin pensar porque le digo "si" a casi todo, sin medir las consecuencias futuras.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[10].value == '...'">
+                        <mat-label>{{ questions[10].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[10].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[10].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <!-- Question #12 -->
+            <div>
+                <li class="list-group-item active">12. Casi siempre estoy de buen ánimo, me gusta bromear, los chistes y ver todo positivamente.</li>
+                <mat-form-field>
+                    <div *ngIf="questions[11].value == '...'">
+                        <mat-label>{{ questions[11].value }}</mat-label>
+                    </div>                    
+                    <mat-select>
+                        <mat-option value="A" (click)="questions[11].value = 'A'; verifyButton()">A</mat-option>
+                        <mat-option value="D" (click)="questions[11].value = 'D'; verifyButton()">D</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            
+        </ul>
+
+        <div class="btn-align">
+            <button type="button" class="btn btn-outline-primary" (click)="addActivity()" [disabled]="!finished">Siguiente</button>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->

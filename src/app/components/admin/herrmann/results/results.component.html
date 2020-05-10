@@ -2,14 +2,22 @@
   <div class="title">
     <h2>Resultados Del Test</h2>
   </div>
-  <div class="graphic">
-    <canvas baseChart
-      [data]="polarAreaChartData"
-      [labels]="polarAreaChartLabels"
-      [legend]="polarAreaLegend"
-      [chartType]="polarAreaChartType"
-      [colors]="polarAreaColors">
-    </canvas>
+
+  <div class="content-card">
+    <div class="graphic">
+      <span class="tag-a">A</span>
+      <span class="tag-b">B</span>
+      <span class="tag-c">C</span>
+      <span class="tag-d">D</span>
+
+      <canvas baseChart
+        [data]="polarAreaChartData"
+        [labels]="polarAreaChartLabels"
+        [legend]="polarAreaLegend"
+        [chartType]="polarAreaChartType"
+        [colors]="polarAreaColors">
+      </canvas>
+    </div>
   </div>
 
   <div class="ml-2">

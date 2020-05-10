@@ -37,6 +37,11 @@ export class HerrmannService
     return this.http.post(environment.apiUrl + 'add/activity/' + this.test_id, form, this.header);
   }
 
+  addFourActivityHerrmann(form)
+  {
+    return this.http.post(environment.apiUrl + 'add/hemisphere/' + this.test_id, form, this.header);
+  }
+
   interpretHerrmann(): Observable<[InterpretationHerrmann]>
   {
     return this.http.post<[InterpretationHerrmann]>

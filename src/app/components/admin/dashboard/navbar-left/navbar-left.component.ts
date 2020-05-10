@@ -16,7 +16,11 @@ export class NavbarLeftComponent implements OnInit
   /**
    * Usuario que ha iniciado sesión en el sistema.
    */
-  public user: User;
+  public user = {
+    name: "",
+    surname: "",
+    image: ""
+  };
 
   public apiUrl: string;
 
@@ -33,7 +37,7 @@ export class NavbarLeftComponent implements OnInit
   { 
     this.title.setTitle('Dashboard');   
     this.initInformation();
-    this.getUser();
+    this.getLocalUser();
   }
 
   ngOnInit() {
@@ -46,12 +50,12 @@ export class NavbarLeftComponent implements OnInit
   initInformation()
   {
     this.apiUrl = environment.apiUrl;
+  }
 
-    this.user = {
-      name: "",
-      surname: "",
-      image: "general_user.jpeg"
-    }
+  getLocalUser()
+  {
+    this.user = this.mainService.getLocalUser();
+    this.username = this.user.name + " " + this.user.surname; 
   }
 
   getUser()

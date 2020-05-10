@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env/environment';
+import { MainService } from '@myServices/dashboard/main.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,11 @@ export class TokenService {
   // public API_URI = "http://localhost:8000/api"
   
 
-  constructor(private http:HttpClient) { }
+  constructor(
+    private http:HttpClient,
+    private mainService: MainService
+  ) 
+  { }
   
   createToken(token)
   {
@@ -27,7 +32,9 @@ export class TokenService {
 
   refreshToken(data)
   {
-    this.createToken(data);
+    this.createToken(data.token);
+    this.mainService.addUserLocal(data.user);
+
     location.reload();
   }
 

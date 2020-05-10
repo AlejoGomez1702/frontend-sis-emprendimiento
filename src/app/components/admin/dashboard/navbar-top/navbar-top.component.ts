@@ -14,10 +14,17 @@ import Swal from 'sweetalert2';
 })
 export class NavbarTopComponent implements OnInit 
 {
+  //Me indica si el usuario ah sido logueado.
+  public isLogged: boolean = false;
+
   /**
    * Usuario que ha iniciado sesión en el sistema.
    */
-  public user: User;
+  public user = {
+    name: "",
+    surname: "",
+    image: ""
+  };
 
   /**
    * Nombre de usuario que se va mostrar en el dashboard.
@@ -33,12 +40,33 @@ export class NavbarTopComponent implements OnInit
     private spinner: Ng4LoadingSpinnerService
   ) 
   { 
-    this.getUser();
+    this.getLocalUser();
+    //this.verifyLogged();
+    //this.getUser();
   }
 
   ngOnInit() 
   {
     //this.getUser();
+  }
+
+  getLocalUser()
+  {
+    this.user = this.mainService.getLocalUser();
+    this.username = this.user.name + " " + this.user.surname; 
+  }
+
+  verifyLogged()
+  {
+    let localUser = localStorage.getItem('user');
+    let userr = JSON.parse(localUser);
+
+    if(userr.name == 'user')
+    {
+      this.isLogged = true;
+    }
+
+    //console.log('retrievedObject: ', JSON.parse(retrievedObject));
   }
 
   logout()
@@ -71,10 +99,22 @@ export class NavbarTopComponent implements OnInit
 
   getUser()
   {
-    this.mainService.getUser().subscribe(
-      data => this.handleResponseUser(data),
-      error => this.handleError(error)
-    );
+    if(this.isLogged)
+    {
+      let localUser = localStorage.getItem('user');
+      let userr = JSON.parse(localUser);
+
+      this.user = userr;
+      this.username = this.user.name + " " + this.user.surname; 
+    }
+    else
+    {
+      this.mainService.getUser().subscribe(
+        data => this.handleResponseUser(data),
+        error => this.handleError(error)
+      );
+    }
+    
     //console.log(this.mainService.getUser());
   }
   
@@ -82,11 +122,22 @@ export class NavbarTopComponent implements OnInit
   {
     this.user = data.user;
     this.username = this.user.name + " " + this.user.surname; 
+
+    let storageUser = {
+      name: data.user.name,
+      surname: data.user.surname,
+      image: data.user.image
+    };
+
+    this.mainService.addUserLocal(storageUser);
+
     console.log(data);
   }
 
-  handleError(error){
-    //console.log(error)
+  handleError(error)
+  {
+    console.log("Puuuutoooo errorr");
+    console.log(error);
   }
 
 

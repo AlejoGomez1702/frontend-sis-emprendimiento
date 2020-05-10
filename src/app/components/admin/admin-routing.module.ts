@@ -9,6 +9,7 @@ import { New2Component } from '@myComponents/admin/herrmann/new2/new2.component'
 import { New3Component } from './herrmann/new3/new3.component';
 import { ResultsComponent } from './herrmann/results/results.component';
 import { MeComponent } from './me/me.component';
+import { New4Component } from './herrmann/new4/new4.component';
   
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
       {path: 'new', component: NewComponent},
       {path: 'new2', component: New2Component},
       {path: 'new3', component: New3Component},
+      {path: 'new4', component: New4Component},
       {path: 'interpret', component: ResultsComponent}
     ]
   },

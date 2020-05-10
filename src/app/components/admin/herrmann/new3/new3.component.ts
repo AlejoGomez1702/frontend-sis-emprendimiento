@@ -191,8 +191,8 @@ export class New3Component implements OnInit
 
   verifyRow(row: number)
   {
-    console.log("Las filas son: ")
-    console.log(this.rows)
+    // console.log("Las filas son: ")
+    // console.log(this.rows)
     let rowSelected = row - 1;
     let flag = true;
 
@@ -253,7 +253,7 @@ export class New3Component implements OnInit
       //   error => this.handleError(error)
       // );  
 
-      this.router.navigateByUrl('/dashboard/herrmann/interpret');
+      this.router.navigateByUrl('/dashboard/herrmann/new4');
     }
 
     /////************SPINNERRRRRRRRRR */

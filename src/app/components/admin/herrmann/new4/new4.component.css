@@ -1,0 +1,42 @@
+.center-text
+{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.paint-text
+{
+    color: #646A6B;
+}
+
+.spacing
+{
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.box 
+{
+    float: left;
+    width: 200px;
+    height: 100px;
+    margin: 1em;
+}
+
+.after-box 
+{
+    clear: left;
+}
+
+.size-body
+{
+    height: 100%;
+}
+
+.btn-align
+{
+    margin-left: 42%;
+    /* margin-top: 100%; */
+    /* margin-right: 0%; */
+}

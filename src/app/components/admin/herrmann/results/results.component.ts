@@ -80,11 +80,11 @@ export class ResultsComponent implements OnInit
     this.interpretationHerrmann = {
       code: 0,
       interpretation: {
-          Characteristics: "azsghkjsbngkjdsn fkjhndkjnhfkjdfnbazsgh kjsbngkjdsnfkjhndkj nhfk jdfnbazsg hkjsbngkjdsnfkjhndkj nhfkjdfnbazs ghkjsbngkjdsnfkjh ndkjnhfkjdfnba ghkjsbngkjdsn fkjhndkjnhfkjd fnbazsghkjsbngkjd snfkjhndkj nhfkjdfnbazsghkjsbngkjdsnfkj hndkjnhfkjdfnb",
-          Description: "azsghkjsbngkjdsnfkjhndkjnhfk jdfnbazsghkjsbngkjdsnf kjhndkjnhfkjdfnbazsghkjsbngkjdsnfk jhndkjnhfkjdfn bazsghkjsbngkjdsnfkj  hndkjnhfkjdf nbazsghkjsbng jdsnfkj hndkjnhf kjdfnba zsghkjsbngkjdsnfkjhn dkjnhfkjdfnb azsghkjsbngkjdsnfkjhndkjnhf kjdfnb",
-          Dominance: "Dominancia BD",
-          Nickname: "Organizado-creativo",
-          Weakness: "azsghkjs bngkjdsnfkjhndkjnhfkjdfn bazsghkjsbngk jdsnfkjhndkjnh fkjdfnb azsghkjsbn gkjdsnfkjhndkjn hfkjdfnbaz sghkjsb ngkjdsnfkjhndkj nhfkjdfnb"
+          Characteristics: "",
+          Description: "",
+          Dominance: "",
+          Nickname: "",
+          Weakness: ""
       },
       messagge: "",
       scors: {

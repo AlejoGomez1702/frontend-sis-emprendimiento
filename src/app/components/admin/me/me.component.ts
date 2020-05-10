@@ -23,7 +23,7 @@ export class MeComponent implements OnInit
 
   public imgNew: string = "general_user.jpeg";
 
-  public user: User;
+  public user = null;
   public userUpdate: User;
   
   // private URL = "http://localhost:8000/api/";
@@ -144,10 +144,7 @@ export class MeComponent implements OnInit
       'success'
     );
     //hacer un refresh del token 
-    this.tokenService.refresh();
-
-    //this.router.navigateByUrl('/dashboard/me');
-    
+    this.tokenService.refresh();    
   }
 
   handleErrorUpdate(error)

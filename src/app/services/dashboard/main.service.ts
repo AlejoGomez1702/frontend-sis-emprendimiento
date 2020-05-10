@@ -24,12 +24,19 @@ export class MainService
   ) 
   { }
 
+  getLocalUser()
+  {
+    var retrievedObject = localStorage.getItem('user');
+
+    return JSON.parse(retrievedObject);
+  }
+
   /**
    * Obtiene los datos del usuario que esta logueado.
    */
   getUser()
   {    
-    return this.http.get<User>(environment.apiUrl + "me", this.header);
+    return this.http.get(environment.apiUrl + "me", this.header);
   }
 
   updateUser(user)
@@ -37,6 +44,22 @@ export class MainService
     console.log("Estoy actualizando al usuario");
     console.log(user);
     return this.http.put(environment.apiUrl + "user/update", user, this.header);
+  }
+
+  addUserLocal(user)
+  {
+    console.log("Me esta llegando al service => ")
+    console.log(user);
+
+    let data = {
+      name: user.name,
+      surname: user.surname,
+      image: user.image
+    }
+
+    let convertUser = JSON.stringify(data);    
+    localStorage.setItem('user', convertUser);
+    //console.log(user.name);
   }
 
   /**
