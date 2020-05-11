@@ -1,15 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env/environment';
-
-export interface User {
-  name: string;
-  surname: string;
-  email: string;
-  description: string;
-  created_at: string;
-  state: number;  
-}
+import { Observable } from 'rxjs';
+import { UserData } from '@myInterfaces/userData';
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +19,9 @@ export class UsersService
     private http: HttpClient
   ) { }
 
-  list()
+  list(): Observable<UserData[]>
   {
-    return this.http.get(environment.apiUrl + 'all/users', this.header);
+    return this.http.get<UserData[]>(environment.apiUrl + 'all/users', this.header);
   }
 
 }

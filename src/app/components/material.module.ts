@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { MatButtonModule,MatCardModule,MatSelectModule, 
             MatTableModule, MatSortModule, MatPaginatorModule,
-            MatProgressSpinnerModule } from '@angular/material';
+            MatProgressSpinnerModule,MatIconModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material';
@@ -32,7 +32,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         MatTableModule,
         MatSortModule,
         MatPaginatorModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatIconModule
         // MatTableDataSource
     ],
     exports: [
@@ -50,7 +51,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
         MatTableModule,
         MatSortModule,
         MatPaginatorModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatIconModule
         // MatTableDataSource
     ]
 })

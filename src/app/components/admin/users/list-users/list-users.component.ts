@@ -1,23 +1,7 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { UsersService } from '@myServices/users.service';
-
-export interface User {
-  name: string;
-  surname: string;
-  email: string;
-  description: string;
-  created_at: string;
-  state: number;  
-}
-
-var ELEMENT_DATA = [{name: "Nombre",
-    surname: "apellidos",
-    email: "correo",
-    description: "descripcion",
-    created_at: "creado",
-    state: 1  }];
+import { UserData } from '@myInterfaces/userData';
 
 @Component({
   selector: 'app-list-users',
@@ -26,68 +10,51 @@ var ELEMENT_DATA = [{name: "Nombre",
 })
 export class ListUsersComponent implements OnInit 
 {
-  /**
-   * Listado con los usuarios.
-   */
-  public listData: MatTableDataSource<any>;
 
-  /**
-   * Nombres de las columnas de la tabla.
-   */
-  public displayedColumns: string[] = ['name', 'surname', 
-                                'email', 'description',
-                                'created_at', 'state'];
+  displayedColumns = ['id', 'name', 'surname', 'email'];
+  public dataSource: MatTableDataSource<UserData>;
 
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  public dataSource = new MatTableDataSource(ELEMENT_DATA);
-  // public dataSource: MatTableDataSource;
-
-  
+  users: UserData[];
 
   public constructor(
     private usersService: UsersService,
     private changeDetectorRefs: ChangeDetectorRef
   ) 
   {
-    // this.usersService.list().subscribe(
-    //   res => this.handleResponse(res),
-    //   error => this.handleError(error)
-    // );
+    // this.dataSource = new MatTableDataSource();
+    this.usersService.list().subscribe(
+      response => this.handleResponse(response)
+    );
+
+    this.dataSource = new MatTableDataSource(this.users);
   }
 
   public ngOnInit()
   {
-    // this.dataSource.sort = this.sort;
-    this.usersService.list().subscribe(
-      res =>  this.handleResponse(res),
-      error => this.handleError(error)
-    );
   }
 
-  listUsers()
+  handleResponse(response)
   {
-    this.usersService.list().subscribe(
-      res => this.handleResponse(res),
-      error => this.handleError(error)
-    );
+    const peopleArray: UserData[] = Object.values(response);
+    this.users = peopleArray;
+    this.dataSource.data = this.users;
   }
 
-  handleResponse(res)
-  {
-    console.log('Exitooooo');
-    this.dataSource = new MatTableDataSource(res.users);
+  /**
+   * Set the paginator and sort after the view init since this component will
+   * be able to query its view for the initialized paginator and sort.
+   */
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
-  handleError(error)
-  {
-    console.log('Errroooorr');
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  
 }
