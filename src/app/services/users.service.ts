@@ -2,6 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '@env/environment';
 
+export interface User {
+  name: string;
+  surname: string;
+  email: string;
+  description: string;
+  created_at: string;
+  state: number;  
+}
+
 @Injectable({
   providedIn: 'root'
 })
