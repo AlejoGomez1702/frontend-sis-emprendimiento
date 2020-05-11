@@ -3,21 +3,37 @@
     <h2>Resultados Del Test</h2>
   </div>
 
-  <div class="content-card">
-    <div class="graphic">
-      <span class="tag-a">A</span>
-      <span class="tag-b">B</span>
-      <span class="tag-c">C</span>
-      <span class="tag-d">D</span>
-
+  <div class="content-card">    
+    <div class="graphic">      
       <canvas baseChart
         [data]="polarAreaChartData"
         [labels]="polarAreaChartLabels"
         [legend]="polarAreaLegend"
         [chartType]="polarAreaChartType"
         [colors]="polarAreaColors">
-      </canvas>
+      </canvas>      
     </div>
+    <!-- <div class="tag-a">A</div> -->
+    <span class="tag-a">A</span>
+    <span class="tag-b">B</span>
+    <span class="tag-c">C</span>
+    <span class="tag-d">D</span>
+
+    <div *ngIf="interpretationHerrmann.hemisphere == 1">
+      <img src="../../../../../assets/img/brain-rigth.png" class="brain-rigth" alt="brain-rigth">
+      <p class="font-weight-bold text-rigth">Buena Capacidad de Ejecución.</p>
+    </div>
+
+    <div *ngIf="interpretationHerrmann.hemisphere == 2">
+      <img src="../../../../../assets/img/brain-left.png" class="brain-left" alt="brain-left">
+      <p class="font-weight-bold text-left">NO Tan Buena Capacidad de Ejecución.</p>
+    </div>
+
+    <div *ngIf="interpretationHerrmann.hemisphere == 0">
+      <img src="../../../../../assets/img/brain-neutral.png" class="brain-neutral" alt="brain-neutral">
+      <p class="font-weight-bold text-neutral">Neutral.</p>
+    </div>
+
   </div>
 
   <div class="ml-2">

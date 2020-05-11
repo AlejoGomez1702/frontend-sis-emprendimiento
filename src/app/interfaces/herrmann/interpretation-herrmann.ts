@@ -1,6 +1,7 @@
 export interface InterpretationHerrmann
 {
     code: number,
+    hemisphere: number,
     interpretation: {
         Characteristics?: string,
         Description: string,

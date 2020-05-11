@@ -36,5 +36,117 @@
 
 .tag-a
 {
+    font-family: Cambria,Georgia,serif; 
+    font-size: xx-large;
+    margin-left: 30%;
+    position: absolute;
+    margin-top: -30%;
+    /* margin-top: -300px; */
+    /* padding-bottom: 50%; */
+    /* margin-bottom: 50%; */
+    /* background-color: chocolate; */
+    /* margin-top: 50%; */
+    float: left;
+}
+
+.tag-b
+{
+    font-family: Cambria,Georgia,serif; 
+    font-size: xx-large;
+    margin-left: 30%;
+    position: absolute;
+    margin-top: -15%;
+    /* margin-top: -300px; */
+    /* padding-bottom: 50%; */
+    /* margin-bottom: 50%; */
+    /* background-color: chocolate; */
+    /* margin-top: 50%; */
+    float: left;
+}
+
+.tag-c
+{
+    font-family: Cambria,Georgia,serif; 
+    font-size: xx-large;
     margin-left: 50%;
+    position: absolute;
+    margin-top: -15%;
+    /* margin-top: -300px; */
+    /* padding-bottom: 50%; */
+    /* margin-bottom: 50%; */
+    /* background-color: chocolate; */
+    /* margin-top: 50%; */
+    float: left;
+}
+
+.tag-d
+{
+    font-family: Cambria,Georgia,serif; 
+    font-size: xx-large;
+    margin-left: 50%;
+    position: absolute;
+    margin-top: -30%;
+    /* margin-top: -300px; */
+    /* padding-bottom: 50%; */
+    /* margin-bottom: 50%; */
+    /* background-color: chocolate; */
+    /* margin-top: 50%; */
+    float: left;
+}
+
+.brain-rigth
+{
+    width: 15%;
+    height: 15%;
+
+    margin-left: 60%;
+    position: absolute;
+    margin-top: -25%;
+    float: left;
+
+}
+
+.brain-left
+{
+    width: 15%;
+    height: 15%;
+
+    margin-left: 6%;
+    position: absolute;
+    margin-top: -25%;
+    float: left;
+
+}
+
+.text-rigth
+{
+    margin-left: 60%;
+    position: absolute;
+    margin-top: -28%;
+}
+
+.text-left
+{
+    margin-left: 2%;
+    position: absolute;
+    margin-top: -28%;
+}
+
+.brain-neutral
+{
+    width: 15%;
+    height: 15%;
+
+    margin-left: 33%;
+    position: absolute;
+    margin-top: -25%;
+    float: left;
+
+}
+
+.text-neutral
+{
+    margin-left: 39%;
+    position: absolute;
+    margin-top: -28%;
 }

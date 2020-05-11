@@ -10,6 +10,7 @@ import { New3Component } from './herrmann/new3/new3.component';
 import { ResultsComponent } from './herrmann/results/results.component';
 import { MeComponent } from './me/me.component';
 import { New4Component } from './herrmann/new4/new4.component';
+import { ListUsersComponent } from './users/list-users/list-users.component';
   
 const routes: Routes = [
   {
@@ -29,6 +30,15 @@ const routes: Routes = [
       {path: 'new3', component: New3Component},
       {path: 'new4', component: New4Component},
       {path: 'interpret', component: ResultsComponent}
+    ]
+  },
+  {
+    //Rutas para la manipulación de usuarios.
+    path: 'users',
+    component: PagesComponent,
+    canActivate: [AfterLoginGuard],
+    children: [
+      {path: '', component: ListUsersComponent}
     ]
   },
   {

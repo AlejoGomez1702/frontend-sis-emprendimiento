@@ -19,7 +19,12 @@ import { ResultsComponent } from './herrmann/results/results.component';
 import { ChartsModule } from 'ng2-charts';
 import { MeComponent } from './me/me.component'; // => Gráficos 
 import { AngularFileUploaderModule } from "angular-file-uploader";
-import { New4Component } from './herrmann/new4/new4.component'; // => File upload
+import { New4Component } from './herrmann/new4/new4.component';
+import { ListUsersComponent } from './users/list-users/list-users.component'; // => File upload
+import { Ng2TableModule } from 'ng2-table/ng2-table';
+// import { TooltipModule } from 'ngx-bootstrap/tooltip';
+// import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
+
 
 @NgModule({
   
@@ -34,7 +39,9 @@ import { New4Component } from './herrmann/new4/new4.component'; // => File uploa
     New2Component, 
     New3Component, 
     ResultsComponent, 
-    MeComponent, New4Component 
+    MeComponent, 
+    New4Component, 
+    ListUsersComponent 
   ],  
   imports: [
     CommonModule,
@@ -43,7 +50,10 @@ import { New4Component } from './herrmann/new4/new4.component'; // => File uploa
     FormsModule, 
     MaterialModule,  
     ChartsModule,
-    AngularFileUploaderModule
+    AngularFileUploaderModule, 
+    Ng2TableModule,
+    // TooltipModule.forRoot()
+    // Ng2TableModule, NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective
   ],
   providers: [
     DatePipe,

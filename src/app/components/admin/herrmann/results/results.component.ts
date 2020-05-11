@@ -11,6 +11,7 @@ import { InterpretationHerrmann } from '@myInterfaces/herrmann/interpretation-he
 })
 export class ResultsComponent implements OnInit 
 {
+
   // [0] => D;  [1] => C;  [2] => B;  [3] => A
   public polarAreaChartLabels: Label[] = ['D => Abstracto (El Estratega)', 'C => Emocional (El Comunicador)', 'B => Secuencial (El Organizado)','A => Lógico (El Experto)'];
   public polarAreaChartData: SingleDataSet = [10,10,10,10];
@@ -63,6 +64,8 @@ export class ResultsComponent implements OnInit
                                       this.interpretationHerrmann.scors.B,
                                       this.interpretationHerrmann.scors.A];
 
+    
+
     this.polarAreaChartData = information;
     // }
     //console.log(this.polarAreaChartData);
@@ -79,6 +82,7 @@ export class ResultsComponent implements OnInit
   {
     this.interpretationHerrmann = {
       code: 0,
+      hemisphere: 0,
       interpretation: {
           Characteristics: "",
           Description: "",

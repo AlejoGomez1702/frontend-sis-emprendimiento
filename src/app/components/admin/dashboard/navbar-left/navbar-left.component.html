@@ -32,6 +32,26 @@
             </a>
           </li>
 
+          <!-- Usuarios del sistema -->
+          <li class="nav-item has-treeview" (click)="addClass()">
+            <a href="#" class="nav-link" >
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Usuarios
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <!-- TEST DE HERRMANN -->
+              <li class="nav-item">
+                <a routerLink="/dashboard/users" class="nav-link" routerLinkActive="active"  [routerLinkActiveOptions]="{exact:true}">
+                  <i class="fa fa-eye nav-icon"></i>
+                  <p>Ver Todos</p>
+                </a>
+              </li>             
+            </ul>
+          </li>
+
           <!-- Actividades de aprendizaje -->
           <li class="nav-item has-treeview" (click)="addClass()">
             <a href="#" class="nav-link" >

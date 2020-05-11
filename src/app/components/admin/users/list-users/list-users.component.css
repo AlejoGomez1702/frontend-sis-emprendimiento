@@ -1,0 +1,16 @@
+table 
+{
+    width: 100%;
+}
+
+th.mat-sort-header-sorted 
+{
+    color: black;
+}
+
+.title-list
+{
+    text-align: center;
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
