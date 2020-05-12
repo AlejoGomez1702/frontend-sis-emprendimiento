@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { UsersService } from '@myServices/users.service';
 import { UserData } from '@myInterfaces/userData';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-users',
@@ -11,7 +13,7 @@ import { UserData } from '@myInterfaces/userData';
 export class ListUsersComponent implements OnInit 
 {
 
-  displayedColumns = ['id', 'name', 'surname', 'email'];
+  displayedColumns = ['name', 'surname', 'email', 'created_at', 'roles', 'state', 'actions'];
   public dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -21,7 +23,8 @@ export class ListUsersComponent implements OnInit
 
   public constructor(
     private usersService: UsersService,
-    private changeDetectorRefs: ChangeDetectorRef
+    // private changeDetectorRefs: ChangeDetectorRef,
+    private spinner: Ng4LoadingSpinnerService
   ) 
   {
     // this.dataSource = new MatTableDataSource();
@@ -37,8 +40,9 @@ export class ListUsersComponent implements OnInit
   }
 
   handleResponse(response)
-  {
+  {    
     const peopleArray: UserData[] = Object.values(response);
+    console.log(peopleArray);
     this.users = peopleArray;
     this.dataSource.data = this.users;
   }
@@ -56,5 +60,49 @@ export class ListUsersComponent implements OnInit
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
+  }
+
+  // deleteUser(id)
+  // {
+  //   this.usersService.delete(id).subscribe(
+  //     res => this.userDeleted(res),
+  //     error => this.notUserDeleted(error)
+  //   );
+  // }
+
+  userDeleted(res)
+  {
+    this.usersService.list().subscribe(
+      response => this.handleResponse(response)
+    );
+  }
+
+  deleteUser(id)
+  {
+    Swal.fire({
+      title: '¿Está seguro?',
+      text: "Eliminará Permanentemente El Usuario!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, Eliminar',
+      cancelButtonText:'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      
+      if (result.value) 
+      {
+        this.usersService.delete(id).subscribe(
+          res => this.userDeleted(res),
+          error => this.notUserDeleted(error)
+        );
+      }
+    });
+  }
+
+  notUserDeleted(error)
+  {
+
   }
 }

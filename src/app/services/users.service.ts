@@ -24,4 +24,9 @@ export class UsersService
     return this.http.get<UserData[]>(environment.apiUrl + 'all/users', this.header);
   }
 
+  delete(id)
+  {
+    return this.http.delete(environment.apiUrl + 'delete/user/' + id, this.header);
+  }
+
 }
