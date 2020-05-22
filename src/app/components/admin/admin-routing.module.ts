@@ -11,6 +11,7 @@ import { ResultsComponent } from './herrmann/results/results.component';
 import { MeComponent } from './me/me.component';
 import { New4Component } from './herrmann/new4/new4.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
+import { ListTestsComponent } from './tests/list-tests/list-tests.component';
   
 const routes: Routes = [
   {
@@ -42,6 +43,14 @@ const routes: Routes = [
     canActivate: [AfterLoginGuard],
     children: [
       {path: '', component: ListUsersComponent}
+    ]
+  },
+  {
+    path: 'tests',
+    component: PagesComponent,
+    canActivate: [AfterLoginGuard],
+    children: [
+      {path: '', component: ListTestsComponent}
     ]
   },
   {

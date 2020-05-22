@@ -42,8 +42,13 @@ export class HerrmannService
     return this.http.post(environment.apiUrl + 'add/hemisphere/' + this.test_id, form, this.header);
   }
 
-  interpretHerrmann(): Observable<[InterpretationHerrmann]>
+  interpretHerrmann(id?): Observable<[InterpretationHerrmann]>
   {
+    if(id)
+    {
+      return this.http.post<[InterpretationHerrmann]>
+        (environment.apiUrl + "interpret/herrmann/" + id, id, this.header);
+    }
     return this.http.post<[InterpretationHerrmann]>
         (environment.apiUrl + "interpret/herrmann/" + this.test_id, this.test_id, this.header);
   }

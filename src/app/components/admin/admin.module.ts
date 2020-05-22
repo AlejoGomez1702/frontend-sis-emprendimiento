@@ -22,6 +22,7 @@ import { AngularFileUploaderModule } from "angular-file-uploader";
 import { New4Component } from './herrmann/new4/new4.component';
 import { ListUsersComponent } from './users/list-users/list-users.component'; // => File upload
 import { Ng2TableModule } from 'ng2-table/ng2-table';
+import { ListTestsComponent } from './tests/list-tests/list-tests.component';
 // import { TooltipModule } from 'ngx-bootstrap/tooltip';
 // import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
 
@@ -41,7 +42,7 @@ import { Ng2TableModule } from 'ng2-table/ng2-table';
     ResultsComponent, 
     MeComponent, 
     New4Component, 
-    ListUsersComponent 
+    ListUsersComponent, ListTestsComponent 
   ],  
   imports: [
     CommonModule,
