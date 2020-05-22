@@ -101,6 +101,36 @@ export class ListUsersComponent implements OnInit
     });
   }
 
+  changeStateUser(id)
+  {
+    Swal.fire({
+      title: '¿Está seguro?',
+      text: "Cambiará El Estado Del Usuario!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, Cambiar',
+      cancelButtonText:'Cancelar',
+      reverseButtons: true
+    }).then((result) => {
+      
+      if (result.value) 
+      {
+        this.usersService.changeState(id).subscribe(
+          res => this.handleResponseState(res)
+        );
+      }
+    });
+  }
+
+  handleResponseState(res)
+  {
+    this.usersService.list().subscribe(
+      response => this.handleResponse(response)
+    );
+  }
+
   notUserDeleted(error)
   {
 

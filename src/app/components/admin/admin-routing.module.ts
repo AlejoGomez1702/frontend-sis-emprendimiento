@@ -15,8 +15,11 @@ import { ListUsersComponent } from './users/list-users/list-users.component';
 const routes: Routes = [
   {
     path: '',
-    component: MainSectionComponent,
-    canActivate: [AfterLoginGuard]
+    component: PagesComponent,
+    canActivate: [AfterLoginGuard],
+    children: [
+      {path: '', component: MainSectionComponent}
+    ]
   },
   {
     // Rutas para el test de herrmann.

@@ -15,6 +15,12 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { NotFoundComponent } from './components/common/not-found/not-found.component'; // => error 404. 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
+// for HttpClient import:
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+
+// for Router import:
+import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+
 // import { ChartsModule } from 'ng2-charts'; // => Gráficas
 
 
@@ -31,6 +37,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SnotifyModule,
     Ng4LoadingSpinnerModule.forRoot(),
     BrowserAnimationsModule,    
+    LoadingBarHttpClientModule,
+    LoadingBarRouterModule
     // ChartsModule
   ],
   

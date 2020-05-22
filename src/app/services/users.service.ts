@@ -29,4 +29,9 @@ export class UsersService
     return this.http.delete(environment.apiUrl + 'delete/user/' + id, this.header);
   }
 
+  changeState(id)
+  {
+    return this.http.post(environment.apiUrl + 'user/change/status/' + id, this.header);
+  }
+
 }

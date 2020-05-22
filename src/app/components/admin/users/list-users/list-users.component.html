@@ -46,7 +46,7 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header> Roles </mat-header-cell>
       <mat-cell *matCellDef="let row">  
         <ng-container *ngFor="let rol of row.roles">
-          {{rol.name + " "}}
+          {{rol.name + "&nbsp;"}} <i class="fa fa-plus"></i>
         </ng-container>
       </mat-cell>
     </ng-container>
@@ -56,10 +56,22 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header> Estado </mat-header-cell>
         <mat-cell *matCellDef="let row">
           <!-- <ng-container *ngIf="row.state == 1"> -->
-            <div *ngIf="row.state == 1" style="color: green;">ACTIVO</div>
+            <div *ngIf="row.state == 1">
+              <div style="color: green;" >ACTIVO</div>
+              <!-- <mat-select value="ACTIVO">
+                <mat-option value="ACTIVO" style="color: green;" >ACTIVO</mat-option>
+                <mat-option value="INACTIVO" style="color: red;" >INACTIVO</mat-option>
+              </mat-select> -->
+            </div>
           <!-- </ng-container>  -->
           <!-- <ng-container *ngIf="row.state == 0"> -->
-            <div *ngIf="row.state == 0" style="color: red;">INACTIVO</div>
+            <div *ngIf="row.state == 0">   
+              <div style="color: red;">INACTIVO</div>        
+              <!-- <mat-select value="row.state">
+                <mat-option value="1" style="color: green;" >ACTIVO</mat-option>
+                <mat-option value="0" style="color: red;" >INACTIVO</mat-option>
+              </mat-select> -->
+            </div>
           <!-- </ng-container>  -->
         </mat-cell>
         <!-- <mat-cell *matCellDef="let row" *ngIf="row.state == 1" style="color: red;"> INACTIVO </mat-cell> -->
@@ -69,9 +81,10 @@
     <ng-container matColumnDef="actions">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Acciones </mat-header-cell>
       <mat-cell *matCellDef="let row">  
-        <a routerLink="" class="btn"><i class="fa fa-eye" aria-hidden="true"></i></a>
-        <a routerLink="/dashboard/clients/edit/{{row.id}}" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-        <button class="btn" (click)="deleteUser(row.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        <!-- <a class="btn"><i class="fa fa-power-off" aria-hidden="true"></i></a> -->
+        <button title="Inactivar o Activar Usuario" class="btn" (click)="changeStateUser(row.id)"><i class="fa fa-power-off" aria-hidden="true"></i></button>
+        <!-- <a routerLink="/dashboard/clients/edit/{{row.id}}" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></a> -->
+        <button title="Eliminar Usuario" class="btn" (click)="deleteUser(row.id)"><i class="fa fa-trash" aria-hidden="true"></i></button>
       </mat-cell>
     </ng-container>
 
