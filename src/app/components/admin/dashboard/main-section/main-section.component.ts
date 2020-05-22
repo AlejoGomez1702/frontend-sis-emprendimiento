@@ -9,11 +9,13 @@ import { MainService } from '@myServices/dashboard/main.service';
 export class MainSectionComponent implements OnInit 
 {
   public ok: boolean = true;
+  public isAdmin: boolean = false;
 
   constructor(
     private mainService: MainService
   ) 
   { 
+    this.isAdmin = this.mainService.verifyRole();
     //this.registerUserLocal();
     //this.verifyStorageUser();
   }

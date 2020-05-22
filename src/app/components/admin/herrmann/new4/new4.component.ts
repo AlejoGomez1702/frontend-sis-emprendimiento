@@ -107,6 +107,8 @@ export class New4Component implements OnInit
   handleError(error)
   {
     console.log('Errorrr');
+    console.log(error);
+    console.log(error.error);
   }
 
 }

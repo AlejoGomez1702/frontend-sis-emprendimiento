@@ -99,8 +99,7 @@ export class LoginComponent implements OnInit
       // );
 
       //Almacenar el usuario logueado en el localStorage
-      this.mainService.addUserLocal(res.user);
-
+      this.mainService.addUserLocal(res.user, res.roles[0]);
 
       this.router.navigateByUrl('/dashboard');
     }

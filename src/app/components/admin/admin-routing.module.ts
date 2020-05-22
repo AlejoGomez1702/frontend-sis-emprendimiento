@@ -12,6 +12,7 @@ import { MeComponent } from './me/me.component';
 import { New4Component } from './herrmann/new4/new4.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { ListTestsComponent } from './tests/list-tests/list-tests.component';
+import { ListTestsUserComponent } from './tests/list-tests-user/list-tests-user.component';
   
 const routes: Routes = [
   {
@@ -50,7 +51,8 @@ const routes: Routes = [
     component: PagesComponent,
     canActivate: [AfterLoginGuard],
     children: [
-      {path: '', component: ListTestsComponent}
+      {path: '', component: ListTestsComponent},
+      {path: 'user', component: ListTestsUserComponent}
     ]
   },
   {
@@ -67,5 +69,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule 
+export class AdminRoutingModule 
 {}

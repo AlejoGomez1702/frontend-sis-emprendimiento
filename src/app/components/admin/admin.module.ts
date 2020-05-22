@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { PagesRoutingModule } from './admin-routing.module';
+import { AdminRoutingModule } from './admin-routing.module';
 import { FormsModule } from '@angular/forms';
 import { PagesComponent } from './pages/pages.component';
 import { NavbarLeftComponent } from './dashboard/navbar-left/navbar-left.component';
@@ -23,6 +23,7 @@ import { New4Component } from './herrmann/new4/new4.component';
 import { ListUsersComponent } from './users/list-users/list-users.component'; // => File upload
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { ListTestsComponent } from './tests/list-tests/list-tests.component';
+import { ListTestsUserComponent } from './tests/list-tests-user/list-tests-user.component';
 // import { TooltipModule } from 'ngx-bootstrap/tooltip';
 // import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
 
@@ -42,11 +43,12 @@ import { ListTestsComponent } from './tests/list-tests/list-tests.component';
     ResultsComponent, 
     MeComponent, 
     New4Component, 
-    ListUsersComponent, ListTestsComponent 
+    ListUsersComponent, 
+    ListTestsComponent, ListTestsUserComponent 
   ],  
   imports: [
     CommonModule,
-    PagesRoutingModule,
+    AdminRoutingModule,
     FontAwesomeModule,
     FormsModule, 
     MaterialModule,  

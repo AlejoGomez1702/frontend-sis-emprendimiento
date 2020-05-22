@@ -23,6 +23,11 @@ export class TestsService
     return this.http.get(environment.apiUrl + 'tests', this.header);
   }
 
+  listByUser()
+  {
+    return this.http.get(environment.apiUrl + 'tests/by/user', this.header);
+  }
+
   delete(id)
   {
     return this.http.delete(environment.apiUrl + 'delete/test/' + id, this.header);

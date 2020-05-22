@@ -22,6 +22,8 @@ export class NavbarLeftComponent implements OnInit
     image: ""
   };
 
+  public isAdmin: boolean = false;
+
   public apiUrl: string;
 
   /**
@@ -56,6 +58,12 @@ export class NavbarLeftComponent implements OnInit
   {
     this.user = this.mainService.getLocalUser();
     this.username = this.user.name + " " + this.user.surname; 
+    let role = localStorage.getItem('role');
+    if(role == 'administrator')
+    {
+      this.isAdmin = true;
+    }
+
   }
 
   getUser()

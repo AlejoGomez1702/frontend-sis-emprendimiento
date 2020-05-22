@@ -46,7 +46,7 @@ export class MainService
     return this.http.put(environment.apiUrl + "user/update", user, this.header);
   }
 
-  addUserLocal(user)
+  addUserLocal(user, role?)
   {
     console.log("Me esta llegando al service => ")
     console.log(user);
@@ -59,6 +59,7 @@ export class MainService
 
     let convertUser = JSON.stringify(data);    
     localStorage.setItem('user', convertUser);
+    localStorage.setItem('role', role);
     //console.log(user.name);
   }
 
@@ -68,6 +69,17 @@ export class MainService
   getGeneralInformation(): Observable<GeneralInformation>
   {
     return this.http.get<GeneralInformation>(environment.apiUrl + "general", this.header);
+  }
+
+  verifyRole()
+  {
+    let role = localStorage.getItem('role');
+    if(role == 'administrator')
+    {
+      return true;
+    }
+
+    return false;
   }
 
 }
