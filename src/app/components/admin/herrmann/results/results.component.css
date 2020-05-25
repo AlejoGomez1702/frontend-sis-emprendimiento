@@ -96,8 +96,8 @@
 
 .brain-rigth
 {
-    width: 15%;
-    height: 15%;
+    width: 10%;
+    height: 10%;
 
     margin-left: 60%;
     position: absolute;
@@ -108,8 +108,8 @@
 
 .brain-left
 {
-    width: 15%;
-    height: 15%;
+    width: 10%;
+    height: 10%;
 
     margin-left: 6%;
     position: absolute;
@@ -134,8 +134,8 @@
 
 .brain-neutral
 {
-    width: 15%;
-    height: 15%;
+    width: 10%;
+    height: 10%;
 
     margin-left: 33%;
     position: absolute;

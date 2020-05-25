@@ -45,6 +45,8 @@ export class ListUsersComponent implements OnInit
     console.log(peopleArray);
     this.users = peopleArray;
     this.dataSource.data = this.users;
+    console.log('USUUUUARIOOOOOSSS');
+    console.log(this.users);
   }
 
   /**
