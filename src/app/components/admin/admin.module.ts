@@ -30,6 +30,17 @@ import { New2MaslowComponent } from './maslow/new2-maslow/new2-maslow.component'
 import { New3MaslowComponent } from './maslow/new3-maslow/new3-maslow.component';
 import { New4MaslowComponent } from './maslow/new4-maslow/new4-maslow.component';
 import { ResultsMaslowComponent } from './maslow/results-maslow/results-maslow.component';
+import { WelcomeLienzoComponent } from './lienzo/welcome-lienzo/welcome-lienzo.component';
+import { MapaValorComponent } from './lienzo/dialogs/mapa-valor/mapa-valor.component';
+import { AlineacionEncajeComponent } from './lienzo/dialogs/alineacion-encaje/alineacion-encaje.component';
+import { SegmentoClientesComponent } from './lienzo/dialogs/segmento-clientes/segmento-clientes.component';
+import { ProductosServiciosComponent } from './lienzo/dialogs/productos-servicios/productos-servicios.component';
+import { BeneficiosAlegriasComponent } from './lienzo/dialogs/beneficios-alegrias/beneficios-alegrias.component';
+import { ProblemasDolores2Component } from './lienzo/dialogs/problemas-dolores2/problemas-dolores2.component';
+import { BeneficiosAlegriasClienteComponent } from './lienzo/dialogs/beneficios-alegrias-cliente/beneficios-alegrias-cliente.component';
+import { ProblemasDoloresComponent } from './lienzo/dialogs/problemas-dolores/problemas-dolores.component';
+import { AccionesClienteComponent } from './lienzo/dialogs/acciones-cliente/acciones-cliente.component';
+// import { MapaValorComponent } from './lienzo/dialogs/mapa-valor/mapa-valor.component';
 // import { TooltipModule } from 'ngx-bootstrap/tooltip';
 // import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
 
@@ -50,7 +61,24 @@ import { ResultsMaslowComponent } from './maslow/results-maslow/results-maslow.c
     MeComponent, 
     New4Component, 
     ListUsersComponent, 
-    ListTestsComponent, ListTestsUserComponent, WelcomeMaslowComponent, NewMaslowComponent, New2MaslowComponent, New3MaslowComponent, New4MaslowComponent, ResultsMaslowComponent 
+    ListTestsComponent, 
+    ListTestsUserComponent, 
+    WelcomeMaslowComponent, 
+    NewMaslowComponent, 
+    New2MaslowComponent, 
+    New3MaslowComponent, 
+    New4MaslowComponent, 
+    ResultsMaslowComponent, 
+    WelcomeLienzoComponent, 
+    MapaValorComponent, 
+    AlineacionEncajeComponent, 
+    SegmentoClientesComponent, 
+    ProductosServiciosComponent, 
+    BeneficiosAlegriasComponent, 
+    ProblemasDolores2Component, 
+    BeneficiosAlegriasClienteComponent, 
+    ProblemasDoloresComponent, 
+    AccionesClienteComponent 
   ],  
   imports: [
     CommonModule,
@@ -66,6 +94,17 @@ import { ResultsMaslowComponent } from './maslow/results-maslow/results-maslow.c
   ],
   providers: [
     DatePipe,
+  ],
+  entryComponents: [
+    MapaValorComponent,
+    AlineacionEncajeComponent, 
+    SegmentoClientesComponent, 
+    ProductosServiciosComponent, 
+    BeneficiosAlegriasComponent, 
+    ProblemasDolores2Component, 
+    BeneficiosAlegriasClienteComponent, 
+    ProblemasDoloresComponent, 
+    AccionesClienteComponent  
   ]
 
 })

@@ -19,6 +19,7 @@ import { New2MaslowComponent } from './maslow/new2-maslow/new2-maslow.component'
 import { New3MaslowComponent } from './maslow/new3-maslow/new3-maslow.component';
 import { New4MaslowComponent } from './maslow/new4-maslow/new4-maslow.component';
 import { ResultsMaslowComponent } from './maslow/results-maslow/results-maslow.component';
+import { WelcomeLienzoComponent } from './lienzo/welcome-lienzo/welcome-lienzo.component';
   
 const routes: Routes = [
   {
@@ -55,6 +56,15 @@ const routes: Routes = [
       {path: 'new3', component: New3MaslowComponent},
       {path: 'new4', component: New4MaslowComponent},
       {path: 'results', component: ResultsMaslowComponent}
+    ]
+  },
+  {
+    // Rutas para el test de Lienzo propuesta valor.
+    path: 'lienzo',
+    component: PagesComponent,
+    canActivate: [AfterLoginGuard],
+    children:[
+      {path: '', component: WelcomeLienzoComponent}
     ]
   },
   {

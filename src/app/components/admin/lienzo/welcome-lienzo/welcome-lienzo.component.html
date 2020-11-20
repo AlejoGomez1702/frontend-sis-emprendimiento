@@ -1,0 +1,31 @@
+<div class="center-text">
+    <h1>Lienzo Propuesta-Valor</h1>
+    <h4 class="paint-text">Método de representación visual que se compone de tres partes:</h4>
+    <h4 class="paint-text">SEGMENTO DE CLIENTES</h4>
+    <h4 class="paint-text">MAPA DE VALOR</h4>
+    <h4 class="paint-text">ALINEACIÓN/ENCAJE</h4>
+    <h4 class="paint-text-click">¡Haz click en cada sección para ver mas información!</h4>
+
+    <div style="position:relative">
+        <img id="main-image" src="assets/img/lienzo.png" width="100%">
+        <a (click)="showProblemasDolores()" class="rim-hotspot" style="width:15.6%; height:27.8%; left:62.1%; top:62.1%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showAccionesCliente()" class="rim-hotspot" style="width:13.3%; height:33.3%; left:82.8%; top:40.0%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showBeneficiosAlegriasCliente()" class="rim-hotspot" style="width:14.3%; height:23.4%; left:61.5%; top:24.2%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showProblemasDolores2()" class="rim-hotspot" style="width:20.1%; height:30.5%; left:24.2%; top:59.2%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showBeneficiosAlegrias()" class="rim-hotspot" style="width:23.6%; height:25.9%; left:21.9%; top:26.1%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showProductosServicios()" class="rim-hotspot" style="width:12.2%; height:30.7%; left:3.9%; top:41.1%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showSegmentoClientes()" class="rim-hotspot" style="width:35.8%; height:10.1%; left:58.1%; top:1.9%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showAlineacionEncaje()" class="rim-hotspot" style="width:12.1%; height:11.6%; left:43.3%; top:1.1%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+        <a (click)="showMapaValor()" class="rim-hotspot" style="width:20.9%; height:10.1%; left:15.7%; top:2.7%; position:absolute; cursor:pointer; display:block; z-index:5; overflow:hidden;"></a>
+    </div>
+
+    <!-- <img src="assets/img/lienzo.png" class="brain-icon" usemap="#map-lienzo">     -->
+    <!-- <img src="assets/img/lienzo.png" id="map-image" style="width: 1287px; max-width: 100%; height: auto;" alt="" usemap="#map" />
+    <map name="map">
+        <area shape="rect" coords="200, 16, 474, 71" (click)="showMapaValor()" />
+    </map> -->
+
+</div>
+<div class="center-text margin-button">
+    <button type="button" class="btn btn-outline-primary" (click)="initTest()">Iniciar Nueva Prueba</button>
+</div>

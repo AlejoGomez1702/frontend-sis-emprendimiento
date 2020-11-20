@@ -63,6 +63,20 @@ export class MainService
     //console.log(user.name);
   }
 
+  setInitial()
+  {
+    let data = {
+      name: "User",
+      surname: "User",
+      image: "general_user.jpeg"
+    }
+
+    let convertUser = JSON.stringify(data); 
+
+    localStorage.setItem('user', convertUser);
+    localStorage.setItem('role', "user");
+  }
+
   /**
    * Obtiene el número de recurso existentes (rutas,vehiculos, clientes... etc.).
    */
