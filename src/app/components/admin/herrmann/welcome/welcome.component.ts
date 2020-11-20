@@ -41,7 +41,7 @@ export class WelcomeComponent implements OnInit
 
   handleResponse(res)
   {
-    console.log('Lo que me retorna el test');
+    console.log('Lo que me retorna el test de herrmann');
     console.log(res);
 
     let code = res.code;
@@ -54,11 +54,6 @@ export class WelcomeComponent implements OnInit
     {
       //Cuadrar el spinner
     }
-
-
-    //console.log(res);
-    //this.spinner.hide();    
-    //console.log(res.user.role.name == 'admin');
     
   }
 

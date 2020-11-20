@@ -13,6 +13,12 @@ import { New4Component } from './herrmann/new4/new4.component';
 import { ListUsersComponent } from './users/list-users/list-users.component';
 import { ListTestsComponent } from './tests/list-tests/list-tests.component';
 import { ListTestsUserComponent } from './tests/list-tests-user/list-tests-user.component';
+import { WelcomeMaslowComponent } from './maslow/welcome-maslow/welcome-maslow.component';
+import { NewMaslowComponent } from './maslow/new-maslow/new-maslow.component';
+import { New2MaslowComponent } from './maslow/new2-maslow/new2-maslow.component';
+import { New3MaslowComponent } from './maslow/new3-maslow/new3-maslow.component';
+import { New4MaslowComponent } from './maslow/new4-maslow/new4-maslow.component';
+import { ResultsMaslowComponent } from './maslow/results-maslow/results-maslow.component';
   
 const routes: Routes = [
   {
@@ -35,6 +41,20 @@ const routes: Routes = [
       {path: 'new3', component: New3Component},
       {path: 'new4', component: New4Component},
       {path: 'interpret', component: ResultsComponent}
+    ]
+  },
+  {
+    // Rutas para la priramide de Maslow.
+    path: 'maslow',
+    component: PagesComponent,
+    canActivate: [ AfterLoginGuard],
+    children: [
+      {path: '', component: WelcomeMaslowComponent},
+      {path: 'new', component: NewMaslowComponent},
+      {path: 'new2', component: New2MaslowComponent},
+      {path: 'new3', component: New3MaslowComponent},
+      {path: 'new4', component: New4MaslowComponent},
+      {path: 'results', component: ResultsMaslowComponent}
     ]
   },
   {

@@ -1,0 +1,38 @@
+<div class="center-text">
+    <h1>Seleccione las mejores 5 ideas:</h1>
+    <h5 class="paint-text">
+        Escoja las 5 ideas que considere mas viables.       
+    </h5>
+</div>
+<!-- general form elements disabled -->
+<div class="card card-secondary spacing">
+    <div class="card-body size-body">
+
+        <!-- Recorro y pinto todas las ideas de negocio seleccionables -->
+        <ng-container *ngFor="let idea of blueSkyIdeas; index as i;">
+            <!-- Card con la idea -->
+            <mat-card (click)="onSelectCard(i)" [ngClass]="{'card-selected mat-elevation-z4': selected[i]} ">
+                <ng-container *ngIf="selected[i]">
+                    <span class="selection">
+                        <mat-icon>check_circle</mat-icon>
+                    </span>                
+                </ng-container>
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title class="clr-green">Idea # {{i+1}}</mat-card-title>
+                    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                </mat-card-header>
+            
+                <mat-card-content>
+                    <h3 class="center-txt">{{ idea }}</h3>    
+                </mat-card-content>
+            </mat-card>
+            <br>
+        </ng-container>
+    </div>
+
+    <div class="btn-align">
+        <button type="button" class="btn btn-outline-primary" (click)="addActivity()" [disabled]="!completed">Siguiente</button>
+    </div>
+
+</div>

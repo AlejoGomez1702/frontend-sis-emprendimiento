@@ -27,7 +27,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

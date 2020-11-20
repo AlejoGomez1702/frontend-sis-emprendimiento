@@ -1,0 +1,38 @@
+<div class="center-text">
+    <h1>De las 5 ideas seleccionadas:</h1>
+    <h5 class="paint-text">
+        Describa el porque consideró su viabilidad por encima de las otras y 
+        demás aspectos que considere describir para fortalecer la idea de negocio.
+    </h5>
+</div>
+<!-- general form elements disabled -->
+<div class="card card-secondary spacing">
+    <div class="card-body size-body">
+
+        <!-- Recorro y pinto todas las ideas de negocio seleccionables -->
+        <ng-container *ngFor="let idea of blueSkyIdeas; index as i;">
+            <!-- Card con la idea -->
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title class="clr-green">{{ idea }}</mat-card-title>
+                    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                </mat-card-header>
+            
+                <mat-card-content>
+                    <div class="form-group">
+                        <!-- <label for="ta1">IDEA #1</label> -->
+                        <textarea class="form-control" id="ta1" rows="3" [(ngModel)]="explanation[i]"></textarea>
+                    </div>
+                    <!-- <h3 class="center-txt">{{ idea }}</h3>     -->
+                </mat-card-content>
+            </mat-card>
+            <br>
+        </ng-container>
+    </div>
+
+    <div class="btn-align">
+        <button type="button" class="btn btn-outline-primary" (click)="addActivity()">Siguiente</button>
+    </div>
+
+</div>

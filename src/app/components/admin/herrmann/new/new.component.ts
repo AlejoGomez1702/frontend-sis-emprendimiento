@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HerrmannService } from '@myServices/herrmann.service';
 import { ActivityHerrmannOne } from '@myInterfaces/herrmann/activity-herman-one';
-import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import { Router } from '@angular/router';
+import { SpinnerService } from '@myServices/dashboard/spinner.service';
 
 @Component({
   selector: 'app-new',
@@ -29,7 +29,8 @@ export class NewComponent implements OnInit
   constructor(
     private herrmannService: HerrmannService,
     private router: Router,
-    private spinner: Ng4LoadingSpinnerService
+    // private spinner: Ng4LoadingSpinnerService
+    private spinner: SpinnerService
   ) 
   { 
     this.initElements();
@@ -178,19 +179,11 @@ export class NewComponent implements OnInit
     }
 
     this.total = this.seccionA + this.seccionB + this.seccionC + this.seccionD;
-  }
-
-  showSpinner()
-  {
-    this.spinner.show();
-    setTimeout(() => {
-      this.spinner.hide();
-    }, 2000)
-  }
+  }  
 
   addActivity()
   {
-    this.showSpinner();
+    this.spinner.showSpinner();
     this.form.sectionA = this.seccionA;
     this.form.sectionB = this.seccionB;
     this.form.sectionC = this.seccionC;

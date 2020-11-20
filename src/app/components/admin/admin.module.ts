@@ -24,6 +24,12 @@ import { ListUsersComponent } from './users/list-users/list-users.component'; //
 import { Ng2TableModule } from 'ng2-table/ng2-table';
 import { ListTestsComponent } from './tests/list-tests/list-tests.component';
 import { ListTestsUserComponent } from './tests/list-tests-user/list-tests-user.component';
+import { WelcomeMaslowComponent } from './maslow/welcome-maslow/welcome-maslow.component';
+import { NewMaslowComponent } from './maslow/new-maslow/new-maslow.component';
+import { New2MaslowComponent } from './maslow/new2-maslow/new2-maslow.component';
+import { New3MaslowComponent } from './maslow/new3-maslow/new3-maslow.component';
+import { New4MaslowComponent } from './maslow/new4-maslow/new4-maslow.component';
+import { ResultsMaslowComponent } from './maslow/results-maslow/results-maslow.component';
 // import { TooltipModule } from 'ngx-bootstrap/tooltip';
 // import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
 
@@ -44,7 +50,7 @@ import { ListTestsUserComponent } from './tests/list-tests-user/list-tests-user.
     MeComponent, 
     New4Component, 
     ListUsersComponent, 
-    ListTestsComponent, ListTestsUserComponent 
+    ListTestsComponent, ListTestsUserComponent, WelcomeMaslowComponent, NewMaslowComponent, New2MaslowComponent, New3MaslowComponent, New4MaslowComponent, ResultsMaslowComponent 
   ],  
   imports: [
     CommonModule,

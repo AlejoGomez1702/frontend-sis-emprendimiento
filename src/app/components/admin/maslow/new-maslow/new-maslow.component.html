@@ -1,0 +1,49 @@
+<div class="center-text">
+    <h1>Ideas A Tierra (Normales)</h1>
+    <h5 class="paint-text">Ingrese 5 ideas de negocio aterrizadas, 
+        que cumplan con estas caracteristicas: <br> seguras, graduales, 
+        obvias, imitables, sencillas, predecibles.        
+    </h5>
+    <h4 class="clr-green">Ejemplo: Restaurante.</h4>
+</div>
+<!-- general form elements disabled -->
+<div class="card card-secondary spacing">
+    <div class="card-body size-body">
+
+        <!-- Idea #1 -->
+        <div class="form-group">
+            <label for="ta1">IDEA #1</label>
+            <textarea class="form-control" id="ta1" rows="3" [(ngModel)]="groundedIdeas1"></textarea>
+        </div>
+
+        <!-- Idea #2 -->
+        <div class="form-group">
+            <label for="ta2">IDEA #2</label>
+            <textarea class="form-control" id="ta2" rows="3" [(ngModel)]="groundedIdeas2"></textarea>
+        </div>
+
+        <!-- Idea #3 -->
+        <div class="form-group">
+            <label for="ta3">IDEA #3</label>
+            <textarea class="form-control" id="ta3" rows="3" [(ngModel)]="groundedIdeas3"></textarea>
+        </div>
+
+        <!-- Idea #4 -->
+        <div class="form-group">
+            <label for="ta4">IDEA #4</label>
+            <textarea class="form-control" id="ta4" rows="3" [(ngModel)]="groundedIdeas4"></textarea>
+        </div>
+
+        <!-- Idea #5 -->
+        <div class="form-group">
+            <label for="ta5">IDEA #5</label>
+            <textarea class="form-control" id="ta5" rows="3" [(ngModel)]="groundedIdeas5"></textarea>
+        </div>
+
+    </div>
+
+    <div class="btn-align">
+        <button type="button" class="btn btn-outline-primary" (click)="addActivity()">Siguiente</button>
+    </div>
+
+</div>
