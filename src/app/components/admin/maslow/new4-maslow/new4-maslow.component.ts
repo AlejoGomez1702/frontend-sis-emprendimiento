@@ -10,6 +10,9 @@ import { MaslowService } from '@myServices/maslow.service';
 })
 export class New4MaslowComponent implements OnInit 
 {
+  // Nombre del negocio de cada idea seleccionada.
+  public names: string[] = ['','','','',''];
+
   // Explicación del porque la selección de cada idea.
   public explanation: string[] = ['','','','',''];
 
@@ -50,14 +53,12 @@ export class New4MaslowComponent implements OnInit
 
   addActivity()
   {
-    console.log('Lo que me ingreso el usuario es lo siguiente: ');
-    console.log(this.explanation);
-
     const completed = this.verifyExplanation();
     if(completed)
     {
       const form = {
-        explanation: this.explanation
+        explanation: this.explanation,
+        names: this.names
       };
 
       this.maslowService.completeMaslow(form).subscribe(
@@ -94,6 +95,14 @@ export class New4MaslowComponent implements OnInit
     for (const expl of this.explanation) 
     {
       if(expl == '') // Si alguno esta vacio aún.
+      {
+        return false;
+      }
+    }
+
+    for (const name of this.names) 
+    {
+      if(name == '') // Si alguno esta vacio aún.
       {
         return false;
       }

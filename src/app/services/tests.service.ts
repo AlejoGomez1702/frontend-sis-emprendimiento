@@ -23,6 +23,11 @@ export class TestsService
     return this.http.get(environment.apiUrl + 'tests', this.header);
   }
 
+  listById(id)
+  {
+    return this.http.get(environment.apiUrl + 'tests/' + id, this.header);
+  }
+
   listByUser()
   {
     return this.http.get(environment.apiUrl + 'tests/by/user', this.header);

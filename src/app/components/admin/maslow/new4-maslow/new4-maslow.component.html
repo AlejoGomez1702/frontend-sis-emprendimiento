@@ -1,8 +1,8 @@
 <div class="center-text">
     <h1>De las 5 ideas seleccionadas:</h1>
     <h5 class="paint-text">
-        Describa el porque consideró su viabilidad por encima de las otras y 
-        demás aspectos que considere describir para fortalecer la idea de negocio.
+        Describa el nombre del negocio y enmarque los aspectos más importantes
+         de como funcionaria el negocio
     </h5>
 </div>
 <!-- general form elements disabled -->
@@ -16,15 +16,13 @@
                 <mat-card-header>
                     <div mat-card-avatar class="example-header-image"></div>
                     <mat-card-title class="clr-green">{{ idea }}</mat-card-title>
-                    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
                 </mat-card-header>
             
                 <mat-card-content>
                     <div class="form-group">
-                        <!-- <label for="ta1">IDEA #1</label> -->
-                        <textarea class="form-control" id="ta1" rows="3" [(ngModel)]="explanation[i]"></textarea>
+                        <input type="text" class="form-control mt-2" placeholder="Nombre del negocio..." [(ngModel)]="names[i]">
+                        <textarea class="form-control mt-2" id="ta1" rows="3" placeholder="Como funciona el negocio..." [(ngModel)]="explanation[i]"></textarea>
                     </div>
-                    <!-- <h3 class="center-txt">{{ idea }}</h3>     -->
                 </mat-card-content>
             </mat-card>
             <br>

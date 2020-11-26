@@ -5,6 +5,8 @@ import { HerrmannService } from '@myServices/herrmann.service';
 import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { MaslowService } from '@myServices/maslow.service';
+import { LienzoService } from '@myServices/lienzo.service';
 
 @Component({
   selector: 'app-list-tests',
@@ -27,18 +29,19 @@ export class ListTestsComponent implements OnInit
     private spinner: Ng4LoadingSpinnerService,
     private testsService: TestsService,
     private router: Router,
-    private herrmannService: HerrmannService
+    private herrmannService: HerrmannService,
+    private maslowService: MaslowService,
+    private lienzoService: LienzoService
   ) 
-  { 
-    this.testsService.list().subscribe(
-      response => this.handleResponse(response)
-    );
-
+  {     
     this.dataSource = new MatTableDataSource(this.tests);
   }
 
   ngOnInit() 
   {
+    this.testsService.list().subscribe(
+      response => this.handleResponse(response)
+    );
   }
 
   handleResponse(response)
@@ -60,11 +63,44 @@ export class ListTestsComponent implements OnInit
   //*********************************************************** */
   showTest(id)
   {
-    this.herrmannService.saveTestId(id);
-    this.router.navigateByUrl('/dashboard/herrmann/interpret');
+    this.testsService.listById(id).subscribe(
+      response => this.handleResponseOne(response, id)
+    );
 
-    console.log("el id es::");
-    console.log(id);
+    // this.herrmannService.saveTestId(id);
+    // this.router.navigateByUrl('/dashboard/herrmann/interpret');
+
+    // console.log("el id es::");
+    // console.log(id);
+  }
+
+  handleResponseOne(response, id)
+  {
+    console.log('información del test: ');
+    console.log(response);
+    let test = response.test;
+    switch (test.type) 
+    {
+      case 'FACTIBILIDAD':
+        this.lienzoService.saveTestId(id);
+        this.router.navigateByUrl('/dashboard/lienzo/new2');
+        break;
+
+      case 'CREATIVIDAD':
+        this.maslowService.saveTestId(id);
+        this.router.navigateByUrl('/dashboard/maslow/results');
+        break;
+
+      case 'AUTOCONOCIMIENTO':
+        this.herrmannService.saveTestId(id);
+        this.router.navigateByUrl('/dashboard/herrmann/interpret');
+        break;
+    
+      default:
+        break;
+    }
+
+
   }
 
   deleteTest(id)

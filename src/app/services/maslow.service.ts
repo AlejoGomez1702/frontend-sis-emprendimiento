@@ -49,6 +49,8 @@ export class MaslowService
 
   completeMaslow(form)
   {
+    console.log('La información que estoy enviando de maslow es: ');
+    console.log(form);
     return this.http.post(environment.apiUrl + 'complete/maslow/' + this.test_id, form, this.header);
   }
 

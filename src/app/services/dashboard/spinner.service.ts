@@ -32,6 +32,15 @@ export class SpinnerService
     );
   }
 
+  showSuccesDialog()
+  {
+    Swal.fire(
+      'Buen Trabajo!',
+      'Se Guardaron Los Cambios!',
+      'success'
+    )
+  }
+
   // deleteTest(id)
   // {
   //   Swal.fire({

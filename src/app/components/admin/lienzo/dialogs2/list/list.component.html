@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Productos Y Servicios</h1>
+<div mat-dialog-content>
+    <ng-container *ngFor="let item of list;index as i">
+        <h6 style="display: inline;">{{ item }}</h6>
+        <button style="border: solid 1px; display: inline;" mat-button color="warn" (click)="delete(i)">Eliminar</button>
+        <br>
+    </ng-container>
+</div>
+
+<br><br>
+<div mat-dialog-actions>
+    <button mat-button (click)="add()">Agregar</button>
+    <button mat-button style="border: solid 1px;" color="primary" (click)="save()">Guardar</button>
+</div>

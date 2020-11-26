@@ -15,6 +15,9 @@ export class ResultsMaslowComponent implements OnInit
   // Explicación de las ideas de cielo azul.
   public explanation: string[] = ['','','','',''];
 
+  // Nombres que se le designaron a los negocios.
+  public names: string[] = ['','','','',''];
+
   constructor(
     private maslowService: MaslowService,
     private spinner: SpinnerService
@@ -31,10 +34,13 @@ export class ResultsMaslowComponent implements OnInit
 
   handlerResponse(res)
   {
+    console.log('REsultado de maslow');
+    console.log(res);
     if(res.code == 200)
     {
       this.blueSky = res.selected;
       this.explanation = res.explanation;
+      this.names = res.names;
     }
   }
 

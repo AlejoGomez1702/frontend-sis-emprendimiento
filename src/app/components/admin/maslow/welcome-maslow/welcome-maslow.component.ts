@@ -35,7 +35,7 @@ export class WelcomeMaslowComponent implements OnInit
     this.maslowService.createMaslow().subscribe(
       res => this.handleResponse(res),
       error => this.handleError(error)
-      );    
+    );    
   }
 
   handleResponse(res)

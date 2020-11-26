@@ -1,0 +1,23 @@
+<div class="center-text">
+    <h1>Temática General</h1>
+    <h5 class="paint-text">
+        Sobre que temática se va hablar para resolver el lienzo-valor?    
+    </h5>
+    <h4 class="clr-green">Ejemplo: Inmobiliaria</h4>
+</div>
+
+<div class="card card-secondary spacing">
+    <div class="card-body size-body">
+
+        <!-- Idea #1 -->
+        <div class="form-group">
+            <label for="ta1">Ingrese la temática:</label>
+            <textarea class="form-control" id="ta1" rows="3" [(ngModel)]="tematica"></textarea>
+        </div>
+    </div>
+
+    <div class="btn-align">
+        <button type="button" class="btn btn-outline-primary" (click)="addActivity()">Siguiente</button>
+    </div>
+
+</div>

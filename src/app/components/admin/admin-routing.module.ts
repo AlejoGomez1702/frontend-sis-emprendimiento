@@ -20,6 +20,8 @@ import { New3MaslowComponent } from './maslow/new3-maslow/new3-maslow.component'
 import { New4MaslowComponent } from './maslow/new4-maslow/new4-maslow.component';
 import { ResultsMaslowComponent } from './maslow/results-maslow/results-maslow.component';
 import { WelcomeLienzoComponent } from './lienzo/welcome-lienzo/welcome-lienzo.component';
+import { NewLienzoComponent } from './lienzo/new-lienzo/new-lienzo.component';
+import { New2LienzoComponent } from './lienzo/new2-lienzo/new2-lienzo.component';
   
 const routes: Routes = [
   {
@@ -64,7 +66,9 @@ const routes: Routes = [
     component: PagesComponent,
     canActivate: [AfterLoginGuard],
     children:[
-      {path: '', component: WelcomeLienzoComponent}
+      {path: '', component: WelcomeLienzoComponent},
+      {path: 'new', component: NewLienzoComponent},
+      {path: 'new2', component: New2LienzoComponent},
     ]
   },
   {

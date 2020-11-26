@@ -40,6 +40,11 @@ import { ProblemasDolores2Component } from './lienzo/dialogs/problemas-dolores2/
 import { BeneficiosAlegriasClienteComponent } from './lienzo/dialogs/beneficios-alegrias-cliente/beneficios-alegrias-cliente.component';
 import { ProblemasDoloresComponent } from './lienzo/dialogs/problemas-dolores/problemas-dolores.component';
 import { AccionesClienteComponent } from './lienzo/dialogs/acciones-cliente/acciones-cliente.component';
+import { ExampleLienzoComponent } from './lienzo/dialogs/example-lienzo/example-lienzo.component';
+import { NewLienzoComponent } from './lienzo/new-lienzo/new-lienzo.component';
+import { New2LienzoComponent } from './lienzo/new2-lienzo/new2-lienzo.component';
+import { ListComponent } from './lienzo/dialogs2/list/list.component';
+import { AddComponent } from './lienzo/dialogs2/add/add.component';
 // import { MapaValorComponent } from './lienzo/dialogs/mapa-valor/mapa-valor.component';
 // import { TooltipModule } from 'ngx-bootstrap/tooltip';
 // import { NgTableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective } from 'ng2-table/ng2-table';
@@ -78,7 +83,7 @@ import { AccionesClienteComponent } from './lienzo/dialogs/acciones-cliente/acci
     ProblemasDolores2Component, 
     BeneficiosAlegriasClienteComponent, 
     ProblemasDoloresComponent, 
-    AccionesClienteComponent 
+    AccionesClienteComponent, ExampleLienzoComponent, NewLienzoComponent, New2LienzoComponent, ListComponent, AddComponent 
   ],  
   imports: [
     CommonModule,
@@ -104,7 +109,12 @@ import { AccionesClienteComponent } from './lienzo/dialogs/acciones-cliente/acci
     ProblemasDolores2Component, 
     BeneficiosAlegriasClienteComponent, 
     ProblemasDoloresComponent, 
-    AccionesClienteComponent  
+    AccionesClienteComponent,
+    ExampleLienzoComponent,
+    
+    //Para la resolución del lienzo
+    ListComponent,
+    AddComponent
   ]
 
 })
